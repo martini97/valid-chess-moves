@@ -1,0 +1,9 @@
+{
+  "name": "valid-chess-moves",
+  "version": "0.1.0",
+  "description": "Calculates all the possible positions that a chess Knight can take in exactly two moves.",
+  "repository": "https://github.com/martini97/valid-chess-moves",
+  "author": "Alessandro Martini <alessandrofmartini@gmail.com>",
+  "license": "GNU GPLv3",
+  "private": false
+}
