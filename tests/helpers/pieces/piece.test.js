@@ -20,14 +20,14 @@ describe('When initiating with a valid algebraic position', () => {
   function shouldSetCorrectCoordinates(algebraic, expected) {
     it(`should set correct coordinates [${algebraic} => ${expected}]`, () => {
       const piece = new Piece(algebraic);
-      expect(piece.column).toEqual(expected[0]);
-      expect(piece.row).toEqual(expected[1]);
+      expect(piece.coordinates).toEqual(expected);
+      expect(piece.algebraicPosition).toEqual(algebraic.toLowerCase());
     });
   }
 
   function shouldGetCorrectAlgebraic(expected, coordinates) {
-    it(`should get correct algebric [${coordinates} => ${expected}]`, () => {
-      expect(Piece.toAlgebraic(...coordinates))
+    it(`should get correct algebraic [${coordinates} => ${expected}]`, () => {
+      expect(Piece.toAlgebraic(coordinates))
         .toEqual(expected.toLowerCase());
     });
   }
@@ -74,7 +74,7 @@ describe('When initiating with a valid algebraic position', () => {
 describe('when testing for legal positions', () => {
   function shouldValidateLegalPosition(pos, expected) {
     it(`should consider ${pos} ${expected ? 'legal' : 'ilegal'}`, () => {
-      expect(Piece.isLegalPosition(...pos)).toEqual(expected);
+      expect(Piece.isLegalPosition(pos)).toEqual(expected);
     });
   }
   const legalMoves = [];
@@ -94,4 +94,16 @@ describe('when testing for legal positions', () => {
   shouldValidateLegalPosition('wrong parameter', false);
   shouldValidateLegalPosition({}, false);
   shouldValidateLegalPosition(2, false);
+});
+
+describe('Given a generic piece', () => {
+  it('should have no rules', () => {
+    const piece = new Piece('A1');
+    expect(piece.rules().length).toEqual(0);
+  });
+
+  it('should not be able to move', () => {
+    const piece = new Piece('A1');
+    expect(piece.possiblePositions().length).toEqual(0);
+  });
 });

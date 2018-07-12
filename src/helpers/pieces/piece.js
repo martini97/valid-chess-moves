@@ -1,32 +1,44 @@
 import { BadRequestError } from 'meaning-error';
 
+/**
+ * @typedef Coordinate An array containing the coordinates in the form of
+ * [column, row].
+ * @type {array}
+ * @property {number} 0 - The column of the position.
+ * @property {number} 1 - The row of the position.
+ */
+
+/**
+ * @typedef AlgebraicNotation
+ * @property {string} - A string representing a coordinates in algebraic notation.
+*/
+
 /** Class representing a generic chess piece. */
 class Piece {
   /**
    * Create a Piece.
-   * @param {string} algebraicPosition - The position of the piece in algebraic notation.
+   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
    */
   constructor(algebraicPosition) {
-    Piece.validateAlgebraicNotation(algebraicPosition);
-    const [column, row] = Piece.fromAlgebraic(algebraicPosition);
+    /**
+    The algebraic position of the piece.
+    @type AlgebraicNotation
+    */
+    this.algebraicPosition = Piece.validateAlgebraicNotation(algebraicPosition);
 
     /**
-    The column of the piece
-    @type number
+    The coordinates of the piece.
+    @type Coordinate
     */
-    this.column = column;
-    /**
-    The row of the piece
-    @type number
-    */
-    this.row = row;
+    this.coordinates = Piece.fromAlgebraic(algebraicPosition);
   }
 
   /**
    * Validates if a position is in algebraic notation.
-   * @param {string} algebraicPosition - The position of the piece in algebraic notation.
+   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
    * @throws {BadRequestError} Throws a BadRequestError if the given algebraicPosition
    * is invalid.
+   * @returns {AlgebraicNotation} - The validated algebraic notation.
    */
   static validateAlgebraicNotation(algebraicPosition) {
     if (typeof algebraicPosition !== 'string'
@@ -36,12 +48,14 @@ class Piece {
         [{ field: 'algebraic', message: 'Param `algebraic` is invalid.' }],
       );
     }
+
+    return algebraicPosition.toLowerCase();
   }
 
   /**
    * Converts from algebric notation to coordinates.
-   * @param {string} algebraicPosition - The position of the piece in algebraic notation.
-   * @returns {number[]} An array in the form [column, row]
+   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
+   * @returns {Coordinate} An array in the form [column, row]
    */
   static fromAlgebraic(algebraicPosition) {
     const [column, row] = algebraicPosition.toLowerCase().split('');
@@ -50,22 +64,43 @@ class Piece {
 
   /**
    * Converts from coordinates to algebric notation.
-   * @param {number} column - The column of the piece.
-   * @param {number} row - The row of the piece.
+   * @param {Coordinate} The coordinates of the piece.
    * @returns {string} The position of the piece in algebraic notation.
    */
-  static toAlgebraic(column, row) {
-    return `${String.fromCharCode(96 + column)}${parseInt(row, 10)}`;
+  static toAlgebraic(coordinates) {
+    return `${String.fromCharCode(96 + coordinates[0])}${parseInt(coordinates[1], 10)}`;
   }
 
   /**
    * Checks if a given position is valid or not.
-   * @param {number} column - The column of the piece.
-   * @param {number} row - The row of the piece.
+   * @param {Coordinate} The coordinates of the piece.
    * @returns {boolean} Whether or not the given position is legal.
    */
-  static isLegalPosition(column, row) {
-    return Math.max(column, row) <= 8 && Math.min(column, row) >= 1;
+  static isLegalPosition(coordinates) {
+    return coordinates.length > 0
+      && Math.max(...coordinates) <= 8
+      && Math.min(...coordinates) >= 1;
+  }
+
+  /**
+   * This function defines the overall rules for the movement of a piece,
+   * override it on the specific piece class with the piece rule.
+   * @summary The rules for the piece movement.
+   * @returns {Coordinate[]} Every possible coordinate that the piece can reach,
+   * it includes coordinates out of the board.
+   */
+  rules() { // eslint-disable-line class-methods-use-this
+    return [];
+  }
+
+  /**
+   * All the possible (legal) movements of a piece.
+   * @returns {Coordinate[]} Every possible legal coordinate that the piece can reach.
+   */
+  possiblePositions() {
+    return this.rules()
+      .filter(position => Piece.isLegalPosition(position))
+      .map(position => Piece.toAlgebraic(position));
   }
 }
 
