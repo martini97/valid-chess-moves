@@ -4,6 +4,25 @@
   "description": "Calculates all the possible positions that a chess Knight can take in exactly two moves.",
   "repository": "https://github.com/martini97/valid-chess-moves",
   "author": "Alessandro Martini <alessandrofmartini@gmail.com>",
-  "license": "GNU GPLv3",
-  "private": false
+  "license": "GPL-3.0-only",
+  "private": false,
+  "scripts": {
+    "dev": "nodemon server.js",
+    "lint": "eslint server.js src/**"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-plugin-root-import": "^6.1.0",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "nodemon": "^1.18.1"
+  }
 }
