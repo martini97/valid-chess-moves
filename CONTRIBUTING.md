@@ -7,6 +7,45 @@ a change.
 Please note we have a code of conduct, please follow it in all your interactions with
 the project.
 
+## Setup
+
+Before making any changes to the code, it's important to have a correct setup of the project:
+
+1. Clone the project
+```bash
+$ git clone https://github.com/martini97/valid-chess-moves.git
+```
+
+2. Install dependencies, this will require [yarn](https://yarnpkg.com/lang/en/)
+```bash
+$ yarn
+```
+
+3. We use git hooks to assure the code is good to go, so make sure your husky setup is ok:
+```bash
+$ cat .git/hooks/pre-commit
+#!/bin/sh
+# husky
+# v1.0.0-rc.13 linux
+
+scriptPath="node_modules/husky/lib/runner/bin.js"
+hookName=`basename "$0"`
+gitParams="$*"
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "Can't find node in PATH, trying to find a node binary on your system"
+fi
+
+if [ -f $scriptPath ]; then
+  node_modules/run-node/run-node $scriptPath $hookName "$gitParams"
+else
+  echo "Can't find Husky, skipping $hookName hook"
+  echo "You can reinstall it using 'npm install husky --save-dev' or delete this hook"
+fi
+
+$ git config core.hooksPath ./.git/hooks
+```
+
 ## Pull Request Process
 
 1. Ensure any install or build dependencies are removed before the end of the layer when
