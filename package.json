@@ -11,10 +11,10 @@
     "docs:clean": "[ ! -e docs ] || rm -rf docs",
     "docs:build": "jsdoc --destination docs --recurse src",
     "docs": "yarn run docs:clean && yarn run docs:build",
+    "test:coverage": "NODE_ENV=test jest --coverage",
     "test:lint": "eslint server.js src/**",
     "test:jest": "NODE_ENV=test jest",
-    "test:coverage": "NODE_ENV=test jest --coverage",
-    "test": "yarn run test:lint && yarn run test:jest && yarn run test:coverage"
+    "test": "yarn run test:lint && yarn run test:jest"
   },
   "dependencies": {
     "babel-core": "^6.26.3",
