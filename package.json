@@ -11,16 +11,29 @@
     "docs:clean": "[ ! -e docs ] || rm -rf docs",
     "docs:build": "jsdoc --destination docs --recurse src",
     "docs": "yarn run docs:clean && yarn run docs:build",
-    "test:coverage": "NODE_ENV=test jest --coverage",
-    "test:lint": "eslint server.js src/**",
-    "test:jest": "NODE_ENV=test jest",
-    "test": "yarn run test:lint && yarn run test:jest"
+    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "test": "NODE_ENV=test jest"
   },
   "husky": {
     "hooks": {
       "pre-commit": "yarn test",
       "pre-push": "yarn test"
     }
+  },
+  "jest": {
+    "projects": [
+      {
+        "runner": "jest-runner-eslint",
+        "displayName": "lint",
+        "testMatch": [
+          "<rootDir>/src/**/*.js"
+        ]
+      },
+      {
+        "displayName": "test"
+      }
+    ]
   },
   "dependencies": {
     "babel-core": "^6.26.3",
@@ -33,15 +46,20 @@
   "devDependencies": {
     "babel-jest": "^23.4.0",
     "babel-plugin-root-import": "^6.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-preset-env": "^1.7.0",
+    "coveralls": "^3.0.2",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
+    "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
+    "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "husky": "^1.0.0-rc.13",
     "jest": "^23.4.0",
+    "jest-runner-eslint": "^0.6.0",
     "jsdoc": "~3.5.5",
     "nodemon": "^1.18.1",
     "regenerator-runtime": "^0.12.0",
