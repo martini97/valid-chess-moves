@@ -16,6 +16,12 @@
     "test:jest": "NODE_ENV=test jest",
     "test": "yarn run test:lint && yarn run test:jest"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test",
+      "pre-push": "yarn test"
+    }
+  },
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-polyfill": "^6.26.0",
@@ -34,6 +40,7 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
+    "husky": "^1.0.0-rc.13",
     "jest": "^23.4.0",
     "jsdoc": "~3.5.5",
     "nodemon": "^1.18.1",
