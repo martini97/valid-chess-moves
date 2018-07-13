@@ -3,7 +3,7 @@ import Piece from './piece';
 /**
  * Class representing a Knight piece.
  * @param {AlgebraicNotation} algebraicPosition - The algebraic position of the Knight.
- * @augments Piece
+ * @extends Piece
  */
 class Knight extends Piece {
   rules() {
