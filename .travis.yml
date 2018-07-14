@@ -6,6 +6,8 @@ after_success:
 cache:
   directories:
   - node_modules
+before_deploy:
+  - yarn build
 deploy:
   provider: heroku
   api_key:
