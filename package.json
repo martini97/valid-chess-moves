@@ -11,6 +11,7 @@
     "docs:clean": "[ ! -e docs ] || rm -rf docs",
     "docs:build": "jsdoc --destination docs --recurse src",
     "docs": "yarn run docs:clean && yarn run docs:build",
+    "heroku:deploy": "cd src/client && yarn install && yarn build",
     "test:coverage": "jest --coverage --coverageReporters=text-lcov --testPathIgnorePatterns src/client | coveralls",
     "test:watch": "NODE_ENV=test jest --watch --testPathIgnorePatterns src/client",
     "test": "NODE_ENV=test jest --testPathIgnorePatterns src/client"

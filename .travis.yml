@@ -7,9 +7,7 @@ cache:
   directories:
   - node_modules
 before_deploy:
-  - cd src/client
-  - yarn install
-  - yarn build
+  - yarn heroku:deploy
 deploy:
   provider: heroku
   api_key:
