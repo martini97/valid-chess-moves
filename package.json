@@ -11,9 +11,9 @@
     "docs:clean": "[ ! -e docs ] || rm -rf docs",
     "docs:build": "jsdoc --destination docs --recurse src",
     "docs": "yarn run docs:clean && yarn run docs:build",
-    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "test:watch": "NODE_ENV=test jest --watch",
-    "test": "NODE_ENV=test jest"
+    "test:coverage": "jest --coverage --coverageReporters=text-lcov --testPathIgnorePatterns src/client | coveralls",
+    "test:watch": "NODE_ENV=test jest --watch --testPathIgnorePatterns src/client",
+    "test": "NODE_ENV=test jest --testPathIgnorePatterns src/client"
   },
   "husky": {
     "hooks": {
