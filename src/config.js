@@ -1,6 +1,6 @@
 export default {
   http: {
-    host: process.env.HTTP_HOST || '0.0.0.0',
-    port: process.env.HTTP_PORT || '8080',
+    host: process.env.HOST || '127.0.0.1',
+    port: process.env.PORT || '8080',
   },
 };
