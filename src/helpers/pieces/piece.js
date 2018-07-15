@@ -33,7 +33,7 @@ class Piece {
    * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
    * @throws {BadRequestError} Throws a BadRequestError if the given algebraicPosition
    * is invalid.
-   * @returns {AlgebraicNotation} - The validated algebraic notation.
+   * @returns {AlgebraicNotation} The validated algebraic notation.
    */
   static validateAlgebraicNotation(algebraicPosition) {
     if (typeof algebraicPosition !== 'string'
@@ -60,7 +60,7 @@ class Piece {
   /**
    * Converts from coordinates to algebric notation.
    * @param {Coordinates} coordinates -  The coordinates of the piece.
-   * @returns {AlgebraicNotation} - The position of the piece in algebraic notation.
+   * @returns {AlgebraicNotation} The position of the piece in algebraic notation.
    */
   static toAlgebraic(coordinates) {
     return `${String.fromCharCode(96 + coordinates[0])}${parseInt(coordinates[1], 10)}`;
@@ -69,7 +69,7 @@ class Piece {
   /**
    * Checks if a given position is valid or not.
    * @param {Coordinates} coordinates - The coordinates of the piece.
-   * @returns {boolean} - Whether or not the given position is legal.
+   * @returns {Boolean} Whether or not the given position is legal.
    */
   static isLegalPosition(coordinates) {
     return coordinates.length > 0
