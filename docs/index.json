@@ -1,0 +1,1435 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/app.js",
+    "content": "import express from 'express';\nimport path from 'path';\n\nconst app = express();\n\napp.use(express.static(path.join(__dirname, 'client/build')));\napp.get('*', (req, res) => {\n  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));\n});\n\nexport default app;\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/app.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "app",
+    "memberof": "src/app.js",
+    "static": true,
+    "longname": "src/app.js~app",
+    "access": "public",
+    "export": true,
+    "importPath": "valid-chess-moves/src/app.js",
+    "importStyle": "app",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
+    "name": "src/config.js",
+    "content": "export default {\n  http: {\n    port: process.env.PORT || '8080',\n  },\n};\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/config.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 51,
+    "kind": "file",
+    "name": "src/helpers/pieces/knight.js",
+    "content": "import Piece from './piece';\n\n/**\n * Class representing a Knight piece.\n * @param {AlgebraicNotation} algebraicPosition - The algebraic position of the Knight.\n * @extends {Piece}\n */\nclass Knight extends Piece {\n  /**\n   * @override\n   */\n  rules = [\n    [+2, +1],\n    [+2, -1],\n    [-2, -1],\n    [-2, +1],\n    [+1, +2],\n    [+1, -2],\n    [-1, -2],\n    [-1, +2],\n  ];\n}\n\nexport default Knight;\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/helpers/pieces/knight.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 52,
+    "kind": "class",
+    "name": "Knight",
+    "memberof": "src/helpers/pieces/knight.js",
+    "static": true,
+    "longname": "src/helpers/pieces/knight.js~Knight",
+    "access": "public",
+    "export": true,
+    "importPath": "valid-chess-moves/src/helpers/pieces/knight.js",
+    "importStyle": "Knight",
+    "description": "Class representing a Knight piece.",
+    "lineNumber": 8,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "AlgebraicNotation"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "algebraicPosition",
+        "description": "The algebraic position of the Knight."
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "Piece"
+    ]
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "rules",
+    "memberof": "src/helpers/pieces/knight.js~Knight",
+    "static": false,
+    "longname": "src/helpers/pieces/knight.js~Knight#rules",
+    "access": "public",
+    "description": "",
+    "lineNumber": 12,
+    "override": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "file",
+    "name": "src/helpers/pieces/piece.js",
+    "content": "import { BadRequestError } from 'meaning-error';\n\n/** Class representing a generic chess piece. */\nclass Piece {\n  /**\n   * Create a Piece in the given position.\n   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.\n   */\n  constructor(algebraicPosition) {\n    /**\n    The algebraic position of the piece.\n    @type AlgebraicNotation\n    */\n    this.algebraicPosition = Piece.validateAlgebraicNotation(algebraicPosition);\n\n    /**\n    The coordinates of the piece.\n    @type Coordinates\n    */\n    this.coordinates = Piece.fromAlgebraic(algebraicPosition);\n  }\n\n  /**\n   * This field defines the overall rules for the movement of a piece,\n   * override it on the specific piece class with the piece rule.\n   * @summary The rules for the piece movement.\n   * @abstract\n   * @type {Coordinates[]}\n   */\n  rules = [];\n\n  /**\n   * Validates if a position is in algebraic notation.\n   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.\n   * @throws {BadRequestError} Throws a BadRequestError if the given algebraicPosition\n   * is invalid.\n   * @returns {AlgebraicNotation} The validated algebraic notation.\n   */\n  static validateAlgebraicNotation(algebraicPosition) {\n    if (typeof algebraicPosition !== 'string'\n          || !algebraicPosition.toLowerCase().match(/^[a-h][1-8]$/)) {\n      throw new BadRequestError(\n        'Invalid algebraic position',\n        [{ field: 'algebraic', message: 'Param `algebraic` is invalid.' }],\n      );\n    }\n\n    return algebraicPosition.toLowerCase();\n  }\n\n  /**\n   * Converts from algebric notation to coordinates.\n   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.\n   * @returns {Coordinates} An array in the form [column, row]\n   */\n  static fromAlgebraic(algebraicPosition) {\n    const [column, row] = algebraicPosition.toLowerCase().split('');\n    return [column.charCodeAt(0) - 96, parseInt(row, 10)];\n  }\n\n  /**\n   * Converts from coordinates to algebric notation.\n   * @param {Coordinates} coordinates -  The coordinates of the piece.\n   * @returns {AlgebraicNotation} The position of the piece in algebraic notation.\n   */\n  static toAlgebraic(coordinates) {\n    return `${String.fromCharCode(96 + coordinates[0])}${parseInt(coordinates[1], 10)}`;\n  }\n\n  /**\n   * Checks if a given position is valid or not.\n   * @param {Coordinates} coordinates - The coordinates of the piece.\n   * @returns {Boolean} Whether or not the given position is legal.\n   */\n  static isLegalPosition(coordinates) {\n    return coordinates.length > 0\n      && Math.max(...coordinates) <= 8\n      && Math.min(...coordinates) >= 1;\n  }\n\n  /**\n   * All the possible (legal) movements of a piece.\n   * @private\n   * @param {Coordinates} startAt - Starting position of piece.\n   * @returns {Coordinates[]} - Every possible coordinates that the piece can reach,\n   * it includes coordinates out of the board.\n   */\n  possiblePositions(startAt) { // eslint-disable-line\n    return this.rules\n      .map(rule => [startAt[0] + rule[0], startAt[1] + rule[1]])\n      .filter(position => this.constructor.isLegalPosition(position));\n  }\n\n  /**\n   * All the possible (legal) movements of a piece after n moves.\n   * @param {Object} movesInfo - Object containing the params.\n   * @param {Coordinates} [movesInfo.startAt=this.coordinates] - Starting position of the\n   * piece. Defaults to the position of the current piece.\n   * @param {Integer} [movesInfo.n=1] - Number of moves, where 0 < n < 20.\n   * @param {Coordinates[]} [movesInfo.positions=[]] - Array of positions. Used for recursion.\n   * @throws {BadRequestError} Throws a BadRequestError if the given n is invalid.\n   * @returns {AlgebraicNotation[]} Every possible coordinates that the piece can reach,\n   * it includes coordinates out of the board.\n   */\n  possiblePositionsInNMoves({ startAt = this.coordinates, n = 1, positions = [] } = {}) {\n    if (!Number.isInteger(n) || n < 0 || n > 20) {\n      throw new BadRequestError(\n        'Invalid argument, moves should be an integer 0 < moves < 20',\n        [{ field: 'moves', message: 'Param `moves` is invalid.' }],\n      );\n    }\n\n    if (n === 0) return positions;\n\n    const currentPossiblePositions = this.possiblePositions(startAt);\n\n    if (n === 1) positions.push(...currentPossiblePositions);\n\n    currentPossiblePositions.forEach((position) => {\n      this.possiblePositionsInNMoves({ startAt: position, n: n - 1, positions });\n    });\n\n    return Array.from(new Set(positions.map(position => Piece.toAlgebraic(position))));\n  }\n}\n\nexport default Piece;\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/helpers/pieces/piece.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 55,
+    "kind": "class",
+    "name": "Piece",
+    "memberof": "src/helpers/pieces/piece.js",
+    "static": true,
+    "longname": "src/helpers/pieces/piece.js~Piece",
+    "access": "public",
+    "export": true,
+    "importPath": "valid-chess-moves/src/helpers/pieces/piece.js",
+    "importStyle": "Piece",
+    "description": "Class representing a generic chess piece.",
+    "lineNumber": 4,
+    "interface": false
+  },
+  {
+    "__docId__": 56,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/helpers/pieces/piece.js~Piece#constructor",
+    "access": "public",
+    "description": "Create a Piece in the given position.",
+    "lineNumber": 9,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "AlgebraicNotation"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "algebraicPosition",
+        "description": "The position of the piece in algebraic notation."
+      }
+    ]
+  },
+  {
+    "__docId__": 57,
+    "kind": "member",
+    "name": "algebraicPosition",
+    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "static": false,
+    "longname": "src/helpers/pieces/piece.js~Piece#algebraicPosition",
+    "access": "public",
+    "description": "The algebraic position of the piece.",
+    "lineNumber": 14,
+    "type": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "member",
+    "name": "coordinates",
+    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "static": false,
+    "longname": "src/helpers/pieces/piece.js~Piece#coordinates",
+    "access": "public",
+    "description": "The coordinates of the piece.",
+    "lineNumber": 20,
+    "type": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "member",
+    "name": "rules",
+    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "static": false,
+    "longname": "src/helpers/pieces/piece.js~Piece#rules",
+    "access": "public",
+    "description": "This field defines the overall rules for the movement of a piece,\noverride it on the specific piece class with the piece rule.",
+    "lineNumber": 30,
+    "unknown": [
+      {
+        "tagName": "@summary",
+        "tagValue": "The rules for the piece movement."
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Coordinates[]"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "abstract": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "validateAlgebraicNotation",
+    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/helpers/pieces/piece.js~Piece.validateAlgebraicNotation",
+    "access": "public",
+    "description": "Validates if a position is in algebraic notation.",
+    "lineNumber": 39,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{AlgebraicNotation} The validated algebraic notation."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "AlgebraicNotation"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "algebraicPosition",
+        "description": "The position of the piece in algebraic notation."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "AlgebraicNotation"
+      ],
+      "spread": false,
+      "description": "The validated algebraic notation."
+    },
+    "throws": [
+      {
+        "types": [
+          "BadRequestError"
+        ],
+        "description": "Throws a BadRequestError if the given algebraicPosition\nis invalid."
+      }
+    ]
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "fromAlgebraic",
+    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/helpers/pieces/piece.js~Piece.fromAlgebraic",
+    "access": "public",
+    "description": "Converts from algebric notation to coordinates.",
+    "lineNumber": 56,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Coordinates} An array in the form [column, row]"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "AlgebraicNotation"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "algebraicPosition",
+        "description": "The position of the piece in algebraic notation."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Coordinates"
+      ],
+      "spread": false,
+      "description": "An array in the form [column, row]"
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "toAlgebraic",
+    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/helpers/pieces/piece.js~Piece.toAlgebraic",
+    "access": "public",
+    "description": "Converts from coordinates to algebric notation.",
+    "lineNumber": 66,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{AlgebraicNotation} The position of the piece in algebraic notation."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Coordinates"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "coordinates",
+        "description": "The coordinates of the piece."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "AlgebraicNotation"
+      ],
+      "spread": false,
+      "description": "The position of the piece in algebraic notation."
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "isLegalPosition",
+    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/helpers/pieces/piece.js~Piece.isLegalPosition",
+    "access": "public",
+    "description": "Checks if a given position is valid or not.",
+    "lineNumber": 75,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Boolean} Whether or not the given position is legal."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Coordinates"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "coordinates",
+        "description": "The coordinates of the piece."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "Whether or not the given position is legal."
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "possiblePositions",
+    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/helpers/pieces/piece.js~Piece#possiblePositions",
+    "access": "private",
+    "description": "All the possible (legal) movements of a piece.",
+    "lineNumber": 88,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Coordinates[]} - Every possible coordinates that the piece can reach,\nit includes coordinates out of the board."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Coordinates"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "startAt",
+        "description": "Starting position of piece."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Coordinates[]"
+      ],
+      "spread": false,
+      "description": "Every possible coordinates that the piece can reach,\nit includes coordinates out of the board."
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "possiblePositionsInNMoves",
+    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/helpers/pieces/piece.js~Piece#possiblePositionsInNMoves",
+    "access": "public",
+    "description": "All the possible (legal) movements of a piece after n moves.",
+    "lineNumber": 105,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{AlgebraicNotation[]} Every possible coordinates that the piece can reach,\nit includes coordinates out of the board."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "movesInfo",
+        "description": "Object containing the params."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Coordinates"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "this.coordinates",
+        "defaultRaw": "this.coordinates",
+        "name": "movesInfo.startAt",
+        "description": "Starting position of the\npiece. Defaults to the position of the current piece."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Integer"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "1",
+        "defaultRaw": 1,
+        "name": "movesInfo.n",
+        "description": "Number of moves, where 0 < n < 20."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Coordinates[]"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "[]",
+        "defaultRaw": [],
+        "name": "movesInfo.positions",
+        "description": "Array of positions. Used for recursion."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "AlgebraicNotation[]"
+      ],
+      "spread": false,
+      "description": "Every possible coordinates that the piece can reach,\nit includes coordinates out of the board."
+    },
+    "throws": [
+      {
+        "types": [
+          "BadRequestError"
+        ],
+        "description": "Throws a BadRequestError if the given n is invalid."
+      }
+    ]
+  },
+  {
+    "__docId__": 66,
+    "kind": "file",
+    "name": "src/helpers/pieces/types.jsdoc",
+    "content": "/**\n * @typedef Coordinates An array containing the coordinates in the form of [column, row].\n * @type {Array}\n * @property {Number} 0 - The column of the position.\n * @property {Number} 1 - The row of the position.\n */\n\n/**\n * @typedef AlgebraicNotation\n * @property {String} - A string representing a coordinates in algebraic notation.\n*/\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/helpers/pieces/types.jsdoc",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 67,
+    "kind": "typedef",
+    "name": "Coordinates",
+    "memberof": "src/helpers/pieces/types.jsdoc",
+    "static": true,
+    "longname": "src/helpers/pieces/types.jsdoc~Coordinates",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "0",
+        "description": "The column of the position."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "1",
+        "description": "The row of the position."
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ],
+      "optional": false,
+      "name": "Coordinates"
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "typedef",
+    "name": "AlgebraicNotation",
+    "memberof": "src/helpers/pieces/types.jsdoc",
+    "static": true,
+    "longname": "src/helpers/pieces/types.jsdoc~AlgebraicNotation",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "-",
+        "description": "A string representing a coordinates in algebraic notation."
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ],
+      "optional": false,
+      "name": "AlgebraicNotation"
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "import app from './app';\nimport config from './config';\n\n/* eslint no-console:0 */\napp.listen(config.http.port, () => console.log(`Listening on ${config.http.port}`));\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "kind": "index",
+    "content": "# Valid chess moves\n\n[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)\n[![Coverage Status](https://coveralls.io/repos/github/martini97/valid-chess-moves/badge.svg?branch=master)](https://coveralls.io/github/martini97/valid-chess-moves?branch=master)\n[![Build Status](https://travis-ci.org/martini97/valid-chess-moves.svg?branch=master)](https://travis-ci.org/martini97/valid-chess-moves)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](/CONTRIBUTING.md)\n\n## Running loccaly\n```bash\n$ git clone https://github.com/martini97/valid-chess-moves.git\n$ cd valid-chess-moves\n$ yarn\n$ yarn start\n```\n\n## Documentation\nThis project is currently using jsdoc for documentation, you can check it [here](https://martini97.github.io/valid-chess-moves/).\n",
+    "longname": "/home/martini/Projects/valid-chess-moves/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"valid-chess-moves\",\n  \"version\": \"0.1.0\",\n  \"description\": \"Calculates all the possible positions that a chess Knight can take in exactly two moves.\",\n  \"repository\": \"https://github.com/martini97/valid-chess-moves\",\n  \"author\": \"Alessandro Martini <alessandrofmartini@gmail.com>\",\n  \"license\": \"GPL-3.0-only\",\n  \"private\": false,\n  \"scripts\": {\n    \"dev\": \"nodemon server.js\",\n    \"docs:clean\": \"[ ! -e docs ] || rm -rf docs\",\n    \"docs:build\": \"esdoc\",\n    \"docs\": \"yarn run docs:clean && yarn run docs:build\",\n    \"heroku:deploy\": \"cd src/client && yarn install && yarn build\",\n    \"test:coverage\": \"jest --coverage --coverageReporters=text-lcov --testPathIgnorePatterns src/client | coveralls\",\n    \"test:watch\": \"NODE_ENV=test jest --watch --testPathIgnorePatterns src/client\",\n    \"test\": \"NODE_ENV=test jest --testPathIgnorePatterns src/client\"\n  },\n  \"husky\": {\n    \"hooks\": {\n      \"pre-commit\": \"yarn test\",\n      \"pre-push\": \"yarn test\"\n    }\n  },\n  \"jest\": {\n    \"projects\": [\n      {\n        \"runner\": \"jest-runner-eslint\",\n        \"displayName\": \"lint\",\n        \"testMatch\": [\n          \"<rootDir>/src/**/*.js\"\n        ]\n      },\n      {\n        \"displayName\": \"test\"\n      }\n    ]\n  },\n  \"dependencies\": {\n    \"babel-core\": \"^6.26.3\",\n    \"babel-plugin-root-import\": \"^6.1.0\",\n    \"babel-plugin-transform-export-extensions\": \"^6.22.0\",\n    \"babel-polyfill\": \"^6.26.0\",\n    \"babel-preset-env\": \"^1.7.0\",\n    \"express\": \"^4.16.3\",\n    \"meaning-error\": \"^2.3.0\",\n    \"meaning-error-middleware\": \"^0.1.1\",\n    \"morgan\": \"^1.9.0\"\n  },\n  \"devDependencies\": {\n    \"babel-eslint\": \"8\",\n    \"babel-jest\": \"^23.4.0\",\n    \"babel-plugin-transform-class-properties\": \"^6.24.1\",\n    \"coveralls\": \"^3.0.2\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.19.1\",\n    \"eslint-config-airbnb\": \"^17.0.0\",\n    \"eslint-import-resolver-babel-plugin-root-import\": \"^1.1.1\",\n    \"eslint-plugin-babel\": \"^5.1.0\",\n    \"eslint-plugin-import\": \"^2.12.0\",\n    \"eslint-plugin-jsx-a11y\": \"^6.0.3\",\n    \"eslint-plugin-react\": \"^7.9.1\",\n    \"husky\": \"^1.0.0-rc.13\",\n    \"jest\": \"^23.4.0\",\n    \"jest-runner-eslint\": \"^0.6.0\",\n    \"jsdoc\": \"~3.5.5\",\n    \"nodemon\": \"^1.18.1\",\n    \"regenerator-runtime\": \"^0.12.0\",\n    \"supertest\": \"^3.1.0\"\n  }\n}\n",
+    "longname": "/home/martini/Projects/valid-chess-moves/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "__docId__": 70,
+    "kind": "testFile",
+    "name": "tests/helpers/pieces/knight.test.js",
+    "content": "import Knight from '@/helpers/pieces/knight';\nimport allKinghtsPositions from '../../fixtures/pieces/knight/1-moves.json';\nimport allKinghtsPositionsIn2Moves from '../../fixtures/pieces/knight/2-moves.json';\n\n/**\n * @test {Knight}\n */\ndescribe('Given a Knight', () => {\n  function testPossiblePositions(startAt, validPositions) {\n    /**\n     * @test {Knight#possiblePositionsInNMoves}\n     */\n    it('should return all valid positions', () => {\n      const knight = new Knight(startAt);\n      const possiblePositions = knight.possiblePositionsInNMoves();\n      expect(possiblePositions.length).toEqual(validPositions.length);\n      possiblePositions.forEach((position) => {\n        expect(validPositions).toContain(position);\n      });\n    });\n  }\n\n  function testPossiblePositionsInNMoves(startAt, validPositions) {\n    /**\n     * @test {Knight#possiblePositionsInNMoves}\n     */\n    it('should return all valid positions for it in 2 moves', () => {\n      validPositions = Array.from(new Set(validPositions)); // eslint-disable-line\n      const knight = new Knight(startAt);\n      const possiblePositions = knight.possiblePositionsInNMoves({ n: 2 });\n      expect(possiblePositions.length).toEqual(validPositions.length);\n      possiblePositions.forEach((position) => {\n        expect(validPositions).toContain(position);\n      });\n    });\n  }\n\n  Object.entries(allKinghtsPositions)\n    .forEach(entry => testPossiblePositions(...entry));\n  Object.entries(allKinghtsPositionsIn2Moves)\n    .forEach(entry => testPossiblePositionsInNMoves(2, ...entry));\n});\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/tests/helpers/pieces/knight.test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 71,
+    "kind": "test",
+    "name": "describe0",
+    "testId": 0,
+    "memberof": "tests/helpers/pieces/knight.test.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "tests/helpers/pieces/knight.test.js~describe0",
+    "access": null,
+    "description": "Given a Knight",
+    "lineNumber": 8,
+    "testTargets": [
+      "Knight"
+    ]
+  },
+  {
+    "__docId__": 72,
+    "kind": "test",
+    "name": "it1",
+    "testId": 1,
+    "memberof": "tests/helpers/pieces/knight.test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/helpers/pieces/knight.test.js~describe0.it1",
+    "access": null,
+    "description": "should return all valid positions",
+    "lineNumber": 13,
+    "testTargets": [
+      "Knight#possiblePositionsInNMoves"
+    ]
+  },
+  {
+    "__docId__": 73,
+    "kind": "test",
+    "name": "it2",
+    "testId": 2,
+    "memberof": "tests/helpers/pieces/knight.test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/helpers/pieces/knight.test.js~describe0.it2",
+    "access": null,
+    "description": "should return all valid positions for it in 2 moves",
+    "lineNumber": 27,
+    "testTargets": [
+      "Knight#possiblePositionsInNMoves"
+    ]
+  },
+  {
+    "__docId__": 74,
+    "kind": "testFile",
+    "name": "tests/helpers/pieces/piece.test.js",
+    "content": "import Piece from '@/helpers/pieces/piece';\nimport allPositions from '../../fixtures/pieces/all-positions.json';\n\n/**\n * @test {Piece}\n */\ndescribe('Given a Piece', () => {\n  /**\n   * @test {Piece#rules}\n   */\n  it('should have no rules', () => {\n    const piece = new Piece('A1');\n    expect(piece.rules.length).toEqual(0);\n  });\n\n  /**\n   * @test {Piece#possiblePositions}\n   */\n  it('should not be able to move', () => {\n    const piece = new Piece('A1');\n    expect(piece.possiblePositions().length).toEqual(0);\n  });\n\n  /**\n   * @test {Piece#possiblePositionsInNMoves}\n   */\n  it('next N moves should always return [] for N > 0', () => {\n    const piece = new Piece('A1');\n    [...Array(20)].map((_, n) => expect(piece.possiblePositionsInNMoves({ n }).length)\n      .toEqual(0));\n  });\n\n  describe('next N moves should throw an error for invalid N', () => {\n    function shouldThrowAnError(piece, n) {\n      /**\n       * @test {Piece#possiblePositionsInNMoves}\n       */\n      it(`N = ${n}`, () => {\n        expect(() => piece.possiblePositionsInNMoves({ n }))\n          .toThrowError('Invalid argument, moves should be an integer 0 < moves < 20');\n      });\n    }\n\n    const piece = new Piece('A1');\n    shouldThrowAnError(piece, -1);\n    shouldThrowAnError(piece, 2.5);\n    shouldThrowAnError(piece, 21);\n    shouldThrowAnError(piece, Math.PI);\n    shouldThrowAnError(piece, -Math.PI);\n    shouldThrowAnError(piece, Infinity);\n    shouldThrowAnError(piece, -Infinity);\n  });\n  describe('initiated with an invalid algebraic position', () => {\n    function shouldThrowAnError(algebraic) {\n      /**\n       * @test {Piece.validateAlgebraicNotation}\n       */\n      it(`should throw an error [${algebraic}]`, () => {\n        expect(() => new Piece(algebraic)).toThrowError('Invalid algebraic position');\n      });\n    }\n\n    shouldThrowAnError('8h');\n    shouldThrowAnError([1, 1]);\n    shouldThrowAnError('invalid algebraic position');\n    shouldThrowAnError('i1');\n    shouldThrowAnError('h9');\n    shouldThrowAnError(8);\n    shouldThrowAnError({ column: 'A', row: 8 });\n  });\n\n  describe('initiated with a valid algebraic position', () => {\n    function shouldSetCorrectCoordinates(algebraic, expected) {\n      /**\n       * @test {Piece#coordinates}\n       * @test {Piece#algebraicPosition}\n       */\n      it(`should set correct coordinates [${algebraic} => ${expected}]`, () => {\n        const piece = new Piece(algebraic);\n        expect(piece.coordinates).toEqual(expected);\n        expect(piece.algebraicPosition).toEqual(algebraic.toLowerCase());\n      });\n    }\n\n    function shouldGetCorrectAlgebraic(expected, coordinates) {\n      /**\n       * @test {Piece.toAlgebraic}\n       */\n      it(`should get correct algebraic [${coordinates} => ${expected}]`, () => {\n        expect(Piece.toAlgebraic(coordinates))\n          .toEqual(expected.toLowerCase());\n      });\n    }\n\n    allPositions.forEach(testData => shouldSetCorrectCoordinates(...testData));\n    allPositions.forEach(testData => shouldGetCorrectAlgebraic(...testData));\n  });\n\n  describe('testing for legal positions', () => {\n    function shouldValidateLegalPosition(pos, expected) {\n      /**\n       * @test {Piece.isLegalPosition}\n       */\n      it(`should consider ${pos} ${expected ? 'legal' : 'ilegal'}`, () => {\n        expect(Piece.isLegalPosition(pos)).toEqual(expected);\n      });\n    }\n    const legalMoves = [];\n    for (let i = 1; i <= 8; i++) {\n      for (let j = 1; j <= 8; j++) {\n        legalMoves.push([i, j]);\n      }\n    }\n\n    legalMoves.forEach(pos => shouldValidateLegalPosition(pos, true));\n    shouldValidateLegalPosition([-1, 2], false);\n    shouldValidateLegalPosition([1, -2], false);\n    shouldValidateLegalPosition([10, 2], false);\n    shouldValidateLegalPosition([1, 20], false);\n    shouldValidateLegalPosition([-1, 20], false);\n    shouldValidateLegalPosition([-10, -2], false);\n    shouldValidateLegalPosition('wrong parameter', false);\n    shouldValidateLegalPosition({}, false);\n    shouldValidateLegalPosition(2, false);\n  });\n});\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/tests/helpers/pieces/piece.test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 75,
+    "kind": "test",
+    "name": "describe3",
+    "testId": 3,
+    "memberof": "tests/helpers/pieces/piece.test.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3",
+    "access": null,
+    "description": "Given a Piece",
+    "lineNumber": 7,
+    "testTargets": [
+      "Piece"
+    ]
+  },
+  {
+    "__docId__": 76,
+    "kind": "test",
+    "name": "it4",
+    "testId": 4,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.it4",
+    "access": null,
+    "description": "should have no rules",
+    "lineNumber": 11,
+    "testTargets": [
+      "Piece#rules"
+    ]
+  },
+  {
+    "__docId__": 77,
+    "kind": "test",
+    "name": "it5",
+    "testId": 5,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.it5",
+    "access": null,
+    "description": "should not be able to move",
+    "lineNumber": 19,
+    "testTargets": [
+      "Piece#possiblePositions"
+    ]
+  },
+  {
+    "__docId__": 78,
+    "kind": "test",
+    "name": "it6",
+    "testId": 6,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.it6",
+    "access": null,
+    "description": "next N moves should always return [] for N > 0",
+    "lineNumber": 27,
+    "testTargets": [
+      "Piece#possiblePositionsInNMoves"
+    ]
+  },
+  {
+    "__docId__": 79,
+    "kind": "test",
+    "name": "describe7",
+    "testId": 7,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe7",
+    "access": null,
+    "description": "next N moves should throw an error for invalid N",
+    "lineNumber": 33
+  },
+  {
+    "__docId__": 80,
+    "kind": "test",
+    "name": "it8",
+    "testId": 8,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3.describe7",
+    "testDepth": 2,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe7.it8",
+    "access": null,
+    "lineNumber": 38,
+    "testTargets": [
+      "Piece#possiblePositionsInNMoves"
+    ]
+  },
+  {
+    "__docId__": 81,
+    "kind": "test",
+    "name": "describe9",
+    "testId": 9,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe9",
+    "access": null,
+    "description": "initiated with an invalid algebraic position",
+    "lineNumber": 53
+  },
+  {
+    "__docId__": 82,
+    "kind": "test",
+    "name": "it10",
+    "testId": 10,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3.describe9",
+    "testDepth": 2,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe9.it10",
+    "access": null,
+    "lineNumber": 58,
+    "testTargets": [
+      "Piece.validateAlgebraicNotation"
+    ]
+  },
+  {
+    "__docId__": 83,
+    "kind": "test",
+    "name": "describe11",
+    "testId": 11,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe11",
+    "access": null,
+    "description": "initiated with a valid algebraic position",
+    "lineNumber": 72
+  },
+  {
+    "__docId__": 84,
+    "kind": "test",
+    "name": "it12",
+    "testId": 12,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3.describe11",
+    "testDepth": 2,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe11.it12",
+    "access": null,
+    "lineNumber": 78,
+    "testTargets": [
+      "Piece#coordinates",
+      "Piece#algebraicPosition"
+    ]
+  },
+  {
+    "__docId__": 85,
+    "kind": "test",
+    "name": "it13",
+    "testId": 13,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3.describe11",
+    "testDepth": 2,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe11.it13",
+    "access": null,
+    "lineNumber": 89,
+    "testTargets": [
+      "Piece.toAlgebraic"
+    ]
+  },
+  {
+    "__docId__": 86,
+    "kind": "test",
+    "name": "describe14",
+    "testId": 14,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe14",
+    "access": null,
+    "description": "testing for legal positions",
+    "lineNumber": 99
+  },
+  {
+    "__docId__": 87,
+    "kind": "test",
+    "name": "it15",
+    "testId": 15,
+    "memberof": "tests/helpers/pieces/piece.test.js~describe3.describe14",
+    "testDepth": 2,
+    "static": true,
+    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe14.it15",
+    "access": null,
+    "lineNumber": 104,
+    "testTargets": [
+      "Piece.isLegalPosition"
+    ]
+  }
+]

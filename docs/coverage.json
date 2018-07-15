@@ -1,0 +1,24 @@
+{
+  "coverage": "92.85%",
+  "expectCount": 14,
+  "actualCount": 13,
+  "files": {
+    "src/app.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/helpers/pieces/knight.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/helpers/pieces/piece.js": {
+      "expectCount": 11,
+      "actualCount": 11,
+      "undocumentLines": []
+    }
+  }
+}
