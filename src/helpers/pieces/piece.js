@@ -93,9 +93,12 @@ class Piece {
   /**
    * All the possible (legal) movements of a piece after n moves.
    * @param {Object} movesInfo - Object containing the params.
-   * @param {Coordinates} startAt - Starting position of piece.
+   * @param {Coordinates} [movesInfo.startAt=this.coordinates] - Starting position of the
+   * piece. Defaults to the position of the current piece.
+   * @param {Integer} [movesInfo.n=1] - Number of moves, where 0 < n < 20.
+   * @param {Coordinates[]} [movesInfo.positions=[]] - Array of positions. Used for recursion.
    * @throws {BadRequestError} Throws a BadRequestError if the given n is invalid.
-   * @returns {AlgebraicNotation[]} - Every possible coordinates that the piece can reach,
+   * @returns {AlgebraicNotation[]} Every possible coordinates that the piece can reach,
    * it includes coordinates out of the board.
    */
   possiblePositionsInNMoves({ startAt = this.coordinates, n = 1, positions = [] } = {}) {
