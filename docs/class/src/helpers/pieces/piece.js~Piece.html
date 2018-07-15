@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">Piece | valid-chess-moves</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Calculates all the possible positions that a chess Knight can take in exactly two moves."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="valid-chess-moves"><meta property="twitter:description" content="Calculates all the possible positions that a chess Knight can take in exactly two moves."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/martini97/valid-chess-moves"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-app">app</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers-pieces">helpers/pieces</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helpers/pieces/knight.js~Knight.html">Knight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html">Piece</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="header-notice">
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Piece from &apos;<span><a href="file/src/helpers/pieces/piece.js.html#lineNumber4">valid-chess-moves/src/helpers/pieces/piece.js</a></span>&apos;</code></pre></div>
+  <span data-ice="access">public</span>
+  <span data-ice="kind">class</span>
+  
+  
+  
+  <span data-ice="source">| <span><a href="file/src/helpers/pieces/piece.js.html#lineNumber4">source</a></span></span>
+</div>
+
+<div class="self-detail detail">
+  <h1 data-ice="name">Piece</h1>
+
+  
+
+  
+  
+  
+  <div class="flat-list" data-ice="directSubclass"><h4>Direct Subclass:</h4><div><span><a href="class/src/helpers/pieces/knight.js~Knight.html">Knight</a></span></div></div>
+  
+  
+  
+  
+  
+
+  
+  
+  <div class="description" data-ice="description"><p>Class representing a generic chess piece.</p>
+</div>
+  
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/tests/helpers/pieces/piece.test.js.html#lineNumber7">Given a Piece</a></span></li>
+</ul>
+  </div>
+
+  
+</div>
+
+
+<div data-ice="staticMethodSummary"><h2>Static Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html#static-method-fromAlgebraic">fromAlgebraic</a></span></span><span class="code" data-ice="signature">(algebraicPosition: <span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span>): <span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Converts from algebric notation to coordinates.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html#static-method-isLegalPosition">isLegalPosition</a></span></span><span class="code" data-ice="signature">(coordinates: <span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Checks if a given position is valid or not.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html#static-method-toAlgebraic">toAlgebraic</a></span></span><span class="code" data-ice="signature">(coordinates: <span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span>): <span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Converts from coordinates to algebric notation.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html#static-method-validateAlgebraicNotation">validateAlgebraicNotation</a></span></span><span class="code" data-ice="signature">(algebraicPosition: <span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span>): <span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Validates if a position is in algebraic notation.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(algebraicPosition: <span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create a Piece in the given position.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="memberSummary"><h2>Member Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Members</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html#instance-member-algebraicPosition">algebraicPosition</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The algebraic position of the piece.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html#instance-member-coordinates">coordinates</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>The coordinates of the piece.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      <span class="abstract" data-ice="abstract">abstract</span>
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html#instance-member-rules">rules</a></span></span><span class="code" data-ice="signature">: <span><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span><span>[]</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>This field defines the overall rules for the movement of a piece,
+override it on the specific piece class with the piece rule.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html#instance-method-possiblePositionsInNMoves">possiblePositionsInNMoves</a></span></span><span class="code" data-ice="signature">(movesInfo: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span><span>[]</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>All the possible (legal) movements of a piece after n moves.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+<table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Private Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html#instance-method-possiblePositions">possiblePositions</a></span></span><span class="code" data-ice="signature">(startAt: <span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span>): <span><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span><span>[]</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>All the possible (legal) movements of a piece.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+<div data-ice="staticMethodDetails"><h2 data-ice="title">Static Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-fromAlgebraic">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">fromAlgebraic</span><span class="code" data-ice="signature">(algebraicPosition: <span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span>): <span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/helpers/pieces/piece.js.html#lineNumber56">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Converts from algebric notation to coordinates.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">algebraicPosition</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The position of the piece in algebraic notation.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>An array in the form [column, row]</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-isLegalPosition">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">isLegalPosition</span><span class="code" data-ice="signature">(coordinates: <span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/helpers/pieces/piece.js.html#lineNumber75">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Checks if a given position is valid or not.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">coordinates</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The coordinates of the piece.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Whether or not the given position is legal.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/tests/helpers/pieces/piece.test.js.html#lineNumber104">Given a Piece testing for legal positions </a></span></li>
+</ul>
+  </div>
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-toAlgebraic">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">toAlgebraic</span><span class="code" data-ice="signature">(coordinates: <span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span>): <span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/helpers/pieces/piece.js.html#lineNumber66">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Converts from coordinates to algebric notation.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">coordinates</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The coordinates of the piece.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The position of the piece in algebraic notation.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/tests/helpers/pieces/piece.test.js.html#lineNumber89">Given a Piece initiated with a valid algebraic position </a></span></li>
+</ul>
+  </div>
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-validateAlgebraicNotation">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">validateAlgebraicNotation</span><span class="code" data-ice="signature">(algebraicPosition: <span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span>): <span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/helpers/pieces/piece.js.html#lineNumber39">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Validates if a position is in algebraic notation.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">algebraicPosition</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The position of the piece in algebraic notation.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The validated algebraic notation.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  <div data-ice="throwWrap">
+    <h4>Throw:</h4>
+    <table>
+      <tbody>
+      
+      <tr class="throw" data-ice="throw">
+        <td><p data-ice="throwName"><span>BadRequestError</span></p></td>
+        <td data-ice="throwDesc"><p>Throws a BadRequestError if the given algebraicPosition
+is invalid.</p>
+</td>
+      </tr>
+</tbody>
+    </table>
+  </div>
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/tests/helpers/pieces/piece.test.js.html#lineNumber58">Given a Piece initiated with an invalid algebraic position </a></span></li>
+</ul>
+  </div>
+
+  
+  
+</div>
+</div>
+<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-constructor-constructor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(algebraicPosition: <span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/helpers/pieces/piece.js.html#lineNumber9">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Create a Piece in the given position.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">algebraicPosition</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>The position of the piece in algebraic notation.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+<div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-algebraicPosition">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">algebraicPosition</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/helpers/pieces/piece.js.html#lineNumber14">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>The algebraic position of the piece.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/tests/helpers/pieces/piece.test.js.html#lineNumber78">Given a Piece initiated with a valid algebraic position </a></span></li>
+</ul>
+  </div>
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-coordinates">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">coordinates</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/helpers/pieces/piece.js.html#lineNumber20">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>The coordinates of the piece.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/tests/helpers/pieces/piece.test.js.html#lineNumber78">Given a Piece initiated with a valid algebraic position </a></span></li>
+</ul>
+  </div>
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-rules">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    <span class="abstract" data-ice="abstract">abstract</span>
+    
+    
+    <span class="code" data-ice="name">rules</span><span class="code" data-ice="signature">: <span><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span><span>[]</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/helpers/pieces/piece.js.html#lineNumber30">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>This field defines the overall rules for the movement of a piece,
+override it on the specific piece class with the piece rule.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/tests/helpers/pieces/piece.test.js.html#lineNumber11">Given a Piece should have no rules</a></span></li>
+</ul>
+  </div>
+
+  
+  
+</div>
+</div>
+<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-possiblePositionsInNMoves">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">possiblePositionsInNMoves</span><span class="code" data-ice="signature">(movesInfo: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span><span>[]</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/helpers/pieces/piece.js.html#lineNumber105">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>All the possible (legal) movements of a piece after n moves.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">movesInfo</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Object containing the params.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" class="code" data-depth="1">movesInfo.startAt</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: this.coordinates</li></ul></td>
+      <td data-ice="description"><p>Starting position of the
+piece. Defaults to the position of the current piece.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" class="code" data-depth="1">movesInfo.n</td>
+      <td data-ice="type" class="code"><span>Integer</span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: 1</li></ul></td>
+      <td data-ice="description"><p>Number of moves, where 0 &lt; n &lt; 20.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" class="code" data-depth="1">movesInfo.positions</td>
+      <td data-ice="type" class="code"><span><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span><span>[]</span></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: []</li></ul></td>
+      <td data-ice="description"><p>Array of positions. Used for recursion.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span><span>[]</span></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Every possible coordinates that the piece can reach,
+it includes coordinates out of the board.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  <div data-ice="throwWrap">
+    <h4>Throw:</h4>
+    <table>
+      <tbody>
+      
+      <tr class="throw" data-ice="throw">
+        <td><p data-ice="throwName"><span>BadRequestError</span></p></td>
+        <td data-ice="throwDesc"><p>Throws a BadRequestError if the given n is invalid.</p>
+</td>
+      </tr>
+</tbody>
+    </table>
+  </div>
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/tests/helpers/pieces/knight.test.js.html#lineNumber13">Given a Knight should return all valid positions</a></span></li>
+<li data-ice="test"><span><a href="test-file/tests/helpers/pieces/knight.test.js.html#lineNumber27">Given a Knight should return all valid positions for it in 2 moves</a></span></li>
+<li data-ice="test"><span><a href="test-file/tests/helpers/pieces/piece.test.js.html#lineNumber27">Given a Piece next N moves should always return [] for N &gt; 0</a></span></li>
+<li data-ice="test"><span><a href="test-file/tests/helpers/pieces/piece.test.js.html#lineNumber38">Given a Piece next N moves should throw an error for invalid N </a></span></li>
+</ul>
+  </div>
+
+  
+  
+</div>
+<h2 data-ice="title">Private Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-possiblePositions">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">possiblePositions</span><span class="code" data-ice="signature">(startAt: <span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span>): <span><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span><span>[]</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/helpers/pieces/piece.js.html#lineNumber88">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>All the possible (legal) movements of a piece.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">startAt</td>
+      <td data-ice="type" class="code"><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Starting position of piece.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span><span>[]</span></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Every possible coordinates that the piece can reach,
+it includes coordinates out of the board.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="tests">
+    <h4>Test:</h4>
+    <ul>
+      
+    <li data-ice="test"><span><a href="test-file/tests/helpers/pieces/piece.test.js.html#lineNumber19">Given a Piece should not be able to move</a></span></li>
+</ul>
+  </div>
+
+  
+  
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

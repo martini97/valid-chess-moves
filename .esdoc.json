@@ -1,0 +1,25 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+  "includes": ["\\.js$", "\\.jsdoc$"],
+  "excludes": ["client/"],
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "test": {
+          "source": "./tests",
+          "interfaces": ["describe", "it", "context", "suite", "test"],
+          "includes": ["(spec|Spec|test|Test)\\.js$"],
+          "excludes": ["fixtures"]
+        }
+      }
+    },
+    {
+      "name": "esdoc-ecmascript-proposal-plugin",
+      "option": {
+        "classProperties": true
+      }
+    }
+  ]
+}
