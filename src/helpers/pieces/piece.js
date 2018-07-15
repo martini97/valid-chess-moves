@@ -1,18 +1,5 @@
 import { BadRequestError } from 'meaning-error';
 
-/**
- * @typedef Coordinate An array containing the coordinates in the form of
- * [column, row].
- * @type {array}
- * @property {number} 0 - The column of the position.
- * @property {number} 1 - The row of the position.
- */
-
-/**
- * @typedef AlgebraicNotation
- * @property {string} - A string representing a coordinates in algebraic notation.
-*/
-
 /** Class representing a generic chess piece. */
 class Piece {
   /**
