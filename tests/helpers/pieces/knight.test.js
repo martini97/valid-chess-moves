@@ -1,6 +1,6 @@
 import Knight from '@/helpers/pieces/knight';
-import allKinghtsPositions from '../../fixtures/knight-moves.json';
-import allKinghtsPositionsIn2Moves from '../../fixtures/knight-moves-in-2-rounds.json';
+import allKinghtsPositions from '../../fixtures/pieces/knight/1-moves.json';
+import allKinghtsPositionsIn2Moves from '../../fixtures/pieces/knight/2-moves.json';
 
 function testPossiblePositions(startAt, validPositions) {
   describe(`Given a Knight starting at ${startAt}`, () => {
