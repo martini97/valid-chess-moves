@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "docs:clean": "[ ! -e docs ] || rm -rf docs",
-    "docs:build": "jsdoc --destination docs --recurse src",
+    "docs:build": "jsdoc -c ./.jsdocrc.json",
     "docs": "yarn run docs:clean && yarn run docs:build",
     "heroku:deploy": "cd src/client && yarn install && yarn build",
     "test:coverage": "jest --coverage --coverageReporters=text-lcov --testPathIgnorePatterns src/client | coveralls",
@@ -48,6 +48,7 @@
     "morgan": "^1.9.0"
   },
   "devDependencies": {
+    "babel-eslint": "8",
     "babel-jest": "^23.4.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "coveralls": "^3.0.2",

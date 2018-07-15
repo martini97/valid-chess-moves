@@ -99,11 +99,35 @@ describe('when testing for legal positions', () => {
 describe('Given a generic piece', () => {
   it('should have no rules', () => {
     const piece = new Piece('A1');
-    expect(piece.rules().length).toEqual(0);
+    expect(piece.rules.length).toEqual(0);
   });
 
   it('should not be able to move', () => {
     const piece = new Piece('A1');
     expect(piece.possiblePositions().length).toEqual(0);
+  });
+
+  it('next N moves should always return [] for N > 0', () => {
+    const piece = new Piece('A1');
+    [...Array(10)].map((_, n) => expect(piece.possiblePositionsInNMoves({ n }).length)
+      .toEqual(0));
+  });
+
+  describe('next N moves should throw an error for invalid N', () => {
+    function shouldThrowAnError(piece, n) {
+      it(`N = ${n}`, () => {
+        expect(() => piece.possiblePositionsInNMoves({ n }))
+          .toThrowError('Invalid argument, moves should be an integer 0 < moves < 20');
+      });
+    }
+
+    const piece = new Piece('A1');
+    shouldThrowAnError(piece, -1);
+    shouldThrowAnError(piece, 2.5);
+    shouldThrowAnError(piece, 21);
+    shouldThrowAnError(piece, Math.PI);
+    shouldThrowAnError(piece, -Math.PI);
+    shouldThrowAnError(piece, Infinity);
+    shouldThrowAnError(piece, -Infinity);
   });
 });
