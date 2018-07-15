@@ -91,13 +91,32 @@ class Piece {
   }
 
   /**
-   * All the possible (legal) movements of a piece.
-   * @returns {Coordinate[]} Every possible legal coordinate that the piece can reach.
+   * All the possible (legal) movements of a piece after n moves.
+   * @param {Object} movesInfo - Object containing the params.
+   * @param {Coordinates} startAt - Starting position of piece.
+   * @throws {BadRequestError} Throws a BadRequestError if the given n is invalid.
+   * @returns {AlgebraicNotation[]} - Every possible coordinates that the piece can reach,
+   * it includes coordinates out of the board.
    */
-  possiblePositions() {
-    return this.rules()
-      .filter(position => Piece.isLegalPosition(position))
-      .map(position => Piece.toAlgebraic(position));
+  possiblePositionsInNMoves({ startAt = this.coordinates, n = 1, positions = [] } = {}) {
+    if (!Number.isInteger(n) || n < 0 || n > 20) {
+      throw new BadRequestError(
+        'Invalid argument, moves should be an integer 0 < moves < 20',
+        [{ field: 'moves', message: 'Param `moves` is invalid.' }],
+      );
+    }
+
+    if (n === 0) return positions;
+
+    const currentPossiblePositions = this.possiblePositions(startAt);
+
+    if (n === 1) positions.push(...currentPossiblePositions);
+
+    currentPossiblePositions.forEach((position) => {
+      this.possiblePositionsInNMoves({ startAt: position, n: n - 1, positions });
+    });
+
+    return Array.from(new Set(positions.map(position => Piece.toAlgebraic(position))));
   }
 }
 
