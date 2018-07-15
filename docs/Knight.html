@@ -260,7 +260,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="piece.js.html">piece.js</a>, <a href="piece.js.html#line27">line 27</a>
+        <a href="piece.js.html">piece.js</a>, <a href="piece.js.html#line14">line 14</a>
     </li></ul></dd>
     
 
@@ -278,7 +278,7 @@
 
         
             
-<h4 class="name" id="coordinates"><span class="type-signature"></span>coordinates<span class="type-signature"> :<a href="global.html#Coordinate">Coordinate</a></span></h4>
+<h4 class="name" id="coordinates"><span class="type-signature"></span>coordinates<span class="type-signature"> :<a href="global.html#Coordinates">Coordinates</a></span></h4>
 
 
 
@@ -293,7 +293,7 @@
     <ul>
         <li>
             
-<span class="param-type"><a href="global.html#Coordinate">Coordinate</a></span>
+<span class="param-type"><a href="global.html#Coordinates">Coordinates</a></span>
 
 
         </li>
@@ -337,7 +337,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="piece.js.html">piece.js</a>, <a href="piece.js.html#line33">line 33</a>
+        <a href="piece.js.html">piece.js</a>, <a href="piece.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -348,125 +348,6 @@
     
 </dl>
 
-
-
-
-
-
-        
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="possiblePositions"><span class="type-signature"></span>possiblePositions<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#Coordinate">Coordinate</a>>}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    All the possible (legal) movements of a piece.
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="Piece.html#possiblePositions">Piece#possiblePositions</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="piece.js.html">piece.js</a>, <a href="piece.js.html#line100">line 100</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    Every possible legal coordinate that the piece can reach.
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;<a href="global.html#Coordinate">Coordinate</a>></span>
-
-
-    </dd>
-</dl>
-
-    
 
 
 
@@ -474,31 +355,29 @@
 
         
             
+<h4 class="name" id="rules"><span class="type-signature"></span>rules<span class="type-signature"> :Array.&lt;<a href="global.html#Coordinates">Coordinates</a>></span></h4>
 
-    
 
-    
-    <h4 class="name" id="rules"><span class="type-signature"></span>rules<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#Coordinate">Coordinate</a>>}</span></h4>
-    
-
-    
-    <p class="summary">The rules for the piece movement.</p>
-    
+<p class="summary">The rules for the piece movement.</p>
 
 
 
 <div class="description">
-    This function defines the overall rules for the movement of a piece,
+    This field defines the overall rules for the movement of a piece,
 override it on the specific piece class with the piece rule.
 </div>
 
 
 
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;<a href="global.html#Coordinates">Coordinates</a>></span>
 
 
-
-
-
+        </li>
+    </ul>
 
 
 
@@ -538,7 +417,164 @@ override it on the specific piece class with the piece rule.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="piece.js.html">piece.js</a>, <a href="piece.js.html#line92">line 92</a>
+        <a href="piece.js.html">piece.js</a>, <a href="piece.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="possiblePositionsInNMoves"><span class="type-signature"></span>possiblePositionsInNMoves<span class="signature">(movesInfo, startAt)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#AlgebraicNotation">AlgebraicNotation</a>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    All the possible (legal) movements of a piece after n moves.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>movesInfo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Object containing the params.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startAt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Coordinates">Coordinates</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Starting position of piece.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="Piece.html#possiblePositionsInNMoves">Piece#possiblePositionsInNMoves</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="piece.js.html">piece.js</a>, <a href="piece.js.html#line101">line 101</a>
     </li></ul></dd>
     
 
@@ -559,13 +595,42 @@ override it on the specific piece class with the piece rule.
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        Throws a BadRequestError if the given n is invalid.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">BadRequestError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
 
         
 <div class="param-desc">
-    Every possible coordinate that the piece can reach,
+    - Every possible coordinates that the piece can reach,
 it includes coordinates out of the board.
 </div>
 
@@ -577,7 +642,7 @@ it includes coordinates out of the board.
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;<a href="global.html#Coordinate">Coordinate</a>></span>
+<span class="param-type">Array.&lt;<a href="global.html#AlgebraicNotation">AlgebraicNotation</a>></span>
 
 
     </dd>
@@ -611,7 +676,7 @@ it includes coordinates out of the board.
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jul 13 2018 01:02:12 GMT-0300 (Brasilia Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Jul 15 2018 14:53:43 GMT-0300 (Brasilia Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
