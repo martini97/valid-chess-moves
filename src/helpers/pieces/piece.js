@@ -15,15 +15,17 @@ class Piece {
 
     /**
     The coordinates of the piece.
-    @type Coordinate
+    @type Coordinates
     */
     this.coordinates = Piece.fromAlgebraic(algebraicPosition);
   }
 
   /**
-    The rules for the piece moves
-    @type Coordinates[]
-  */
+   * This field defines the overall rules for the movement of a piece,
+   * override it on the specific piece class with the piece rule.
+   * @summary The rules for the piece movement.
+   * @type {Coordinates[]}
+   */
   rules = [];
 
   /**
@@ -48,7 +50,7 @@ class Piece {
   /**
    * Converts from algebric notation to coordinates.
    * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
-   * @returns {Coordinate} An array in the form [column, row]
+   * @returns {Coordinates} An array in the form [column, row]
    */
   static fromAlgebraic(algebraicPosition) {
     const [column, row] = algebraicPosition.toLowerCase().split('');
@@ -57,7 +59,7 @@ class Piece {
 
   /**
    * Converts from coordinates to algebric notation.
-   * @param {Coordinate} coordinates -  The coordinates of the piece.
+   * @param {Coordinates} coordinates -  The coordinates of the piece.
    * @returns {AlgebraicNotation} - The position of the piece in algebraic notation.
    */
   static toAlgebraic(coordinates) {
@@ -66,7 +68,7 @@ class Piece {
 
   /**
    * Checks if a given position is valid or not.
-   * @param {Coordinate} coordinates - The coordinates of the piece.
+   * @param {Coordinates} coordinates - The coordinates of the piece.
    * @returns {boolean} - Whether or not the given position is legal.
    */
   static isLegalPosition(coordinates) {
