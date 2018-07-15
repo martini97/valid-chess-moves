@@ -34,6 +34,12 @@ class Piece {
   }
 
   /**
+    The rules for the piece moves
+    @type Coordinates[]
+  */
+  rules = [];
+
+  /**
    * Validates if a position is in algebraic notation.
    * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
    * @throws {BadRequestError} Throws a BadRequestError if the given algebraicPosition
@@ -83,14 +89,16 @@ class Piece {
   }
 
   /**
-   * This function defines the overall rules for the movement of a piece,
-   * override it on the specific piece class with the piece rule.
-   * @summary The rules for the piece movement.
-   * @returns {Coordinate[]} Every possible coordinate that the piece can reach,
+   * All the possible (legal) movements of a piece.
+   * @private
+   * @param {Coordinates} startAt - Starting position of piece.
+   * @returns {Coordinates[]} - Every possible coordinates that the piece can reach,
    * it includes coordinates out of the board.
    */
-  rules() { // eslint-disable-line class-methods-use-this
-    return [];
+  possiblePositions(startAt) { // eslint-disable-line
+    return this.rules
+      .map(rule => [startAt[0] + rule[0], startAt[1] + rule[1]])
+      .filter(position => this.constructor.isLegalPosition(position));
   }
 
   /**

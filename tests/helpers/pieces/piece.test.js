@@ -99,7 +99,7 @@ describe('when testing for legal positions', () => {
 describe('Given a generic piece', () => {
   it('should have no rules', () => {
     const piece = new Piece('A1');
-    expect(piece.rules().length).toEqual(0);
+    expect(piece.rules.length).toEqual(0);
   });
 
   it('should not be able to move', () => {
