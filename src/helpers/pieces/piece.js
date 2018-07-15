@@ -3,7 +3,7 @@ import { BadRequestError } from 'meaning-error';
 /** Class representing a generic chess piece. */
 class Piece {
   /**
-   * Create a Piece.
+   * Create a Piece in the given position.
    * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
    */
   constructor(algebraicPosition) {
@@ -24,6 +24,7 @@ class Piece {
    * This field defines the overall rules for the movement of a piece,
    * override it on the specific piece class with the piece rule.
    * @summary The rules for the piece movement.
+   * @abstract
    * @type {Coordinates[]}
    */
   rules = [];
