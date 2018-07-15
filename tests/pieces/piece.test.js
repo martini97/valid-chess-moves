@@ -1,5 +1,5 @@
-import Piece from '@/helpers/pieces/piece';
-import allPositions from '../../fixtures/pieces/all-positions.json';
+import Piece from '@/pieces/piece';
+import allPositions from '../fixtures/pieces/all-positions.json';
 
 /**
  * @test {Piece}

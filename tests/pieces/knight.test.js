@@ -1,6 +1,6 @@
-import Knight from '@/helpers/pieces/knight';
-import allKinghtsPositions from '../../fixtures/pieces/knight/1-moves.json';
-import allKinghtsPositionsIn2Moves from '../../fixtures/pieces/knight/2-moves.json';
+import Knight from '@/pieces/knight';
+import allKinghtsPositions from '../fixtures/pieces/knight/1-moves.json';
+import allKinghtsPositionsIn2Moves from '../fixtures/pieces/knight/2-moves.json';
 
 /**
  * @test {Knight}
