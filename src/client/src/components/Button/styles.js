@@ -9,5 +9,9 @@ export default theme => ({
   container: {
     display: 'flex',
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  wrapper: {
+    position: 'relative',
   },
 });
