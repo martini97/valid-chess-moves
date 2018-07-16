@@ -1,7 +1,7 @@
 {
-  "coverage": "90.47%",
-  "expectCount": 21,
-  "actualCount": 19,
+  "coverage": "94.11%",
+  "expectCount": 34,
+  "actualCount": 32,
   "files": {
     "src/app.js": {
       "expectCount": 1,
@@ -13,6 +13,16 @@
     "src/controllers/positions.js": {
       "expectCount": 1,
       "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/helpers/pieces/knight.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/helpers/pieces/piece.js": {
+      "expectCount": 11,
+      "actualCount": 11,
       "undocumentLines": []
     },
     "src/middlewares/errors.js": {

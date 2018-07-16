@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/presenters/index.js | valid-chess-moves</title>
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/helpers/pieces/piece.js | valid-chess-moves</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -49,8 +49,134 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/presenters/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export positions from &apos;./positions&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/helpers/pieces/piece.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { BadRequestError } from &apos;meaning-error&apos;;
+
+/** Class representing a generic chess piece. */
+class Piece {
+  /**
+   * Create a Piece in the given position.
+   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
+   */
+  constructor(algebraicPosition) {
+    /**
+    The algebraic position of the piece.
+    @type AlgebraicNotation
+    */
+    this.algebraicPosition = Piece.validateAlgebraicNotation(algebraicPosition);
+
+    /**
+    The coordinates of the piece.
+    @type Coordinates
+    */
+    this.coordinates = Piece.fromAlgebraic(algebraicPosition);
+  }
+
+  /**
+   * This field defines the overall rules for the movement of a piece,
+   * override it on the specific piece class with the piece rule.
+   * @summary The rules for the piece movement.
+   * @abstract
+   * @type {Coordinates[]}
+   */
+  rules = [];
+
+  /**
+   * Validates if a position is in algebraic notation.
+   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
+   * @throws {BadRequestError} Throws a BadRequestError if the given algebraicPosition
+   * is invalid.
+   * @returns {AlgebraicNotation} The validated algebraic notation.
+   */
+  static validateAlgebraicNotation(algebraicPosition) {
+    if (typeof algebraicPosition !== &apos;string&apos;
+          || !algebraicPosition.toLowerCase().match(/^[a-h][1-8]$/)) {
+      throw new BadRequestError(
+        &apos;Invalid algebraic position&apos;,
+        [{ field: &apos;algebraic&apos;, message: &apos;Param `algebraic` is invalid.&apos; }],
+      );
+    }
+
+    return algebraicPosition.toLowerCase();
+  }
+
+  /**
+   * Converts from algebric notation to coordinates.
+   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
+   * @returns {Coordinates} An array in the form [column, row]
+   */
+  static fromAlgebraic(algebraicPosition) {
+    const [column, row] = algebraicPosition.toLowerCase().split(&apos;&apos;);
+    return [column.charCodeAt(0) - 96, parseInt(row, 10)];
+  }
+
+  /**
+   * Converts from coordinates to algebric notation.
+   * @param {Coordinates} coordinates -  The coordinates of the piece.
+   * @returns {AlgebraicNotation} The position of the piece in algebraic notation.
+   */
+  static toAlgebraic(coordinates) {
+    return `${String.fromCharCode(96 + coordinates[0])}${parseInt(coordinates[1], 10)}`;
+  }
+
+  /**
+   * Checks if a given position is valid or not.
+   * @param {Coordinates} coordinates - The coordinates of the piece.
+   * @returns {Boolean} Whether or not the given position is legal.
+   */
+  static isLegalPosition(coordinates) {
+    return coordinates.length &gt; 0
+      &amp;&amp; Math.max(...coordinates) &lt;= 8
+      &amp;&amp; Math.min(...coordinates) &gt;= 1;
+  }
+
+  /**
+   * All the possible (legal) movements of a piece.
+   * @private
+   * @param {Coordinates} startAt - Starting position of piece.
+   * @returns {Coordinates[]} - Every possible coordinates that the piece can reach,
+   * it includes coordinates out of the board.
+   */
+  possiblePositions(startAt) { // eslint-disable-line
+    return this.rules
+      .map(rule =&gt; [startAt[0] + rule[0], startAt[1] + rule[1]])
+      .filter(position =&gt; this.constructor.isLegalPosition(position));
+  }
+
+  /**
+   * All the possible (legal) movements of a piece after n moves.
+   * @param {Object} movesInfo - Object containing the params.
+   * @param {Coordinates} [movesInfo.startAt=this.coordinates] - Starting position of the
+   * piece. Defaults to the position of the current piece.
+   * @param {Integer} [movesInfo.n=1] - Number of moves, where 0 &lt; n &lt; 20.
+   * @param {Coordinates[]} [movesInfo.positions=[]] - Array of positions. Used for recursion.
+   * @throws {BadRequestError} Throws a BadRequestError if the given n is invalid.
+   * @returns {AlgebraicNotation[]} Every possible coordinates that the piece can reach,
+   * it includes coordinates out of the board.
+   */
+  possiblePositionsInNMoves({ startAt = this.coordinates, n = 1, positions = [] } = {}) {
+    if (!Number.isInteger(n) || n &lt; 0 || n &gt; 20) {
+      throw new BadRequestError(
+        &apos;Invalid argument, moves should be an integer 0 &lt; moves &lt; 20&apos;,
+        [{ field: &apos;moves&apos;, message: &apos;Param `moves` is invalid.&apos; }],
+      );
+    }
+
+    if (n === 0) return positions;
+
+    const currentPossiblePositions = this.possiblePositions(startAt);
+
+    if (n === 1) positions.push(...currentPossiblePositions);
+
+    currentPossiblePositions.forEach((position) =&gt; {
+      this.possiblePositionsInNMoves({ startAt: position, n: n - 1, positions });
+    });
+
+    return Array.from(new Set(positions.map(position =&gt; Piece.toAlgebraic(position))));
+  }
+}
+
+export default Piece;
 </code></pre>
 
 </div>

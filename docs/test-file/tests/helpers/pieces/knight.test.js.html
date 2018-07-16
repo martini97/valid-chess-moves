@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/presenters/index.js | valid-chess-moves</title>
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">tests/helpers/pieces/knight.test.js | valid-chess-moves</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -49,8 +49,49 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/presenters/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export positions from &apos;./positions&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">tests/helpers/pieces/knight.test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Knight from &apos;@/helpers/pieces/knight&apos;;
+import allKinghtsPositions from &apos;../../fixtures/pieces/knight/1-moves.json&apos;;
+import allKinghtsPositionsIn2Moves from &apos;../../fixtures/pieces/knight/2-moves.json&apos;;
+
+/**
+ * @test {Knight}
+ */
+describe(&apos;Given a Knight&apos;, () =&gt; {
+  function testPossiblePositions(startAt, validPositions) {
+    /**
+     * @test {Knight#possiblePositionsInNMoves}
+     */
+    it(&apos;should return all valid positions&apos;, () =&gt; {
+      const knight = new Knight(startAt);
+      const possiblePositions = knight.possiblePositionsInNMoves();
+      expect(possiblePositions.length).toEqual(validPositions.length);
+      possiblePositions.forEach((position) =&gt; {
+        expect(validPositions).toContain(position);
+      });
+    });
+  }
+
+  function testPossiblePositionsIn2Moves(startAt, validPositions) {
+    /**
+     * @test {Knight#possiblePositionsInNMoves}
+     */
+    it(&apos;should return all valid positions for it in 2 moves&apos;, () =&gt; {
+      validPositions = Array.from(new Set(validPositions)); // eslint-disable-line
+      const knight = new Knight(startAt);
+      const possiblePositions = knight.possiblePositionsInNMoves({ n: 2 });
+      expect(possiblePositions.length).toEqual(validPositions.length);
+      possiblePositions.forEach((position) =&gt; {
+        expect(validPositions).toContain(position);
+      });
+    });
+  }
+
+  Object.entries(allKinghtsPositions)
+    .forEach(entry =&gt; testPossiblePositions(...entry));
+  Object.entries(allKinghtsPositionsIn2Moves)
+    .forEach(entry =&gt; testPossiblePositionsIn2Moves(...entry));
+});
 </code></pre>
 
 </div>
