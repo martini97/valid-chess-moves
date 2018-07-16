@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div
+  className="MuiGrid-item-108 Tile-tile-102 Tile-white-104"
+  onClick={[Function]}
+/>
+`;
+
+exports[`snapshot 2`] = `
+<div
+  className="MuiGrid-item-108 Tile-tile-102 Tile-white-104"
+  onClick={[Function]}
+>
+  <span
+    aria-label="horse"
+    className="Knight-knight-203"
+    role="img"
+  >
+    🐴
+  </span>
+</div>
+`;
+
+exports[`snapshot 3`] = `
+<div
+  className="MuiGrid-item-108 Tile-tile-102 Tile-whitePossible-106"
+  onClick={[Function]}
+>
+  <span
+    aria-label="horse"
+    className="Knight-knight-203"
+    role="img"
+  >
+    🐴
+  </span>
+</div>
+`;
+
+exports[`snapshot 4`] = `
+<div
+  className="MuiGrid-item-108 Tile-tile-102 Tile-whitePossible-106"
+  onClick={[Function]}
+>
+  <span
+    aria-label="horse"
+    className="Knight-knight-203"
+    role="img"
+  >
+    🐴
+  </span>
+</div>
+`;
