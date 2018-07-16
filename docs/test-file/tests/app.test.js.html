@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">tests/app.test.js | valid-chess-moves</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Calculates all the possible positions that a chess Knight can take in exactly two moves."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="valid-chess-moves"><meta property="twitter:description" content="Calculates all the possible positions that a chess Knight can take in exactly two moves."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/martini97/valid-chess-moves"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-app">app</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#controllers">controllers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-positions">positions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers-pieces">helpers/pieces</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helpers/pieces/knight.js~Knight.html">Knight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html">Piece</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#middlewares">middlewares</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-errors">errors</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pieces">pieces</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pieces/knight.js~Knight.html">Knight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pieces/piece.js~Piece.html">Piece</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#presenters">presenters</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-positions">positions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#routes">routes</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-router">router</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#validators">validators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-algebraicnotation">algebraicnotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-coordinates">coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-moves">moves</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">tests/app.test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import request from &apos;supertest&apos;;
+import app from &apos;@/app&apos;;
+
+/**
+ * @test {app}
+ */
+describe(&apos;Given the app&apos;, () =&gt; {
+  describe(&apos;When getting a not implemented piece&apos;, () =&gt; {
+    it(&apos;should return an error&apos;, async () =&gt; {
+      const { body } = await request(app)
+        .get(&apos;/positions/king/a1&apos;)
+        .expect(400);
+      expect(body).toHaveProperty(&apos;error_name&apos;, &apos;BadRequestError&apos;);
+      expect(body).toHaveProperty(&apos;error_message&apos;, &apos;Invalid piece. Valid pieces: knight.&apos;);
+      expect(body).toHaveProperty(&apos;status_code&apos;, 400);
+      expect(body).toHaveProperty(&apos;error&apos;);
+      expect(body.error).toHaveLength(1);
+      expect(body.error[0]).toHaveProperty(&apos;field&apos;, &apos;piece&apos;);
+      expect(body.error[0]).toHaveProperty(&apos;message&apos;, &apos;piece is invalid&apos;);
+    });
+  });
+
+  describe(&apos;When getting a implemented piece&apos;, () =&gt; {
+    it(&apos;should return possible positions&apos;, async () =&gt; {
+      const { body } = await request(app)
+        .get(&apos;/positions/knight/a1&apos;)
+        .expect(200);
+      expect(body).toHaveProperty(&apos;piece&apos;, &apos;knight&apos;);
+      expect(body).toHaveProperty(&apos;moves&apos;, 2);
+      expect(body).toHaveProperty(&apos;positions&apos;, [
+        &apos;e3&apos;, &apos;e1&apos;, &apos;a1&apos;, &apos;a3&apos;, &apos;d4&apos;, &apos;b4&apos;, &apos;d2&apos;, &apos;c5&apos;, &apos;c1&apos;, &apos;a5&apos;,
+      ]);
+    });
+
+    it(&apos;should allow query for n of moves&apos;, async () =&gt; {
+      const { body } = await request(app)
+        .get(&apos;/positions/knight/a1?moves=5&apos;)
+        .expect(200);
+      expect(body).toHaveProperty(&apos;piece&apos;, &apos;knight&apos;);
+      expect(body).toHaveProperty(&apos;moves&apos;, 5);
+      expect(body).toHaveProperty(&apos;positions&apos;, [
+        &apos;g4&apos;, &apos;g2&apos;, &apos;c2&apos;, &apos;c4&apos;, &apos;f5&apos;, &apos;f1&apos;, &apos;d1&apos;, &apos;d5&apos;,
+        &apos;g6&apos;, &apos;c6&apos;, &apos;f7&apos;, &apos;f3&apos;, &apos;d3&apos;, &apos;d7&apos;, &apos;g8&apos;, &apos;h3&apos;,
+        &apos;h1&apos;, &apos;e4&apos;, &apos;h7&apos;, &apos;h5&apos;, &apos;e8&apos;, &apos;e2&apos;, &apos;e6&apos;, &apos;b3&apos;,
+        &apos;b5&apos;, &apos;b1&apos;, &apos;a2&apos;, &apos;a6&apos;, &apos;b7&apos;, &apos;c8&apos;, &apos;a4&apos;, &apos;a8&apos;,
+      ]);
+    });
+
+    it(&apos;should throw an error for invalid position&apos;, async () =&gt; {
+      const { body } = await request(app)
+        .get(&apos;/positions/knight/1a&apos;)
+        .expect(400);
+      expect(body).toHaveProperty(&apos;error_name&apos;, &apos;BadRequestError&apos;);
+      expect(body).toHaveProperty(&apos;error_message&apos;, &apos;Invalid algebraic position.&apos;);
+      expect(body).toHaveProperty(&apos;status_code&apos;, 400);
+      expect(body).toHaveProperty(&apos;error&apos;);
+      expect(body.error).toHaveLength(1);
+      expect(body.error[0]).toHaveProperty(&apos;field&apos;, &apos;startAt&apos;);
+      expect(body.error[0]).toHaveProperty(&apos;message&apos;, &apos;startAt is invalid&apos;);
+    });
+
+    it(&apos;should throw an error for negative moves&apos;, async () =&gt; {
+      const { body } = await request(app)
+        .get(&apos;/positions/knight/a1?moves=-1&apos;)
+        .expect(400);
+      expect(body).toHaveProperty(&apos;error_name&apos;, &apos;BadRequestError&apos;);
+      expect(body).toHaveProperty(&apos;error_message&apos;, &apos;Invalid number of moves.&apos;);
+      expect(body).toHaveProperty(&apos;status_code&apos;, 400);
+      expect(body).toHaveProperty(&apos;error&apos;);
+      expect(body.error).toHaveLength(1);
+      expect(body.error[0]).toHaveProperty(&apos;field&apos;, &apos;moves&apos;);
+      expect(body.error[0]).toHaveProperty(&apos;message&apos;, &apos;moves is invalid&apos;);
+    });
+
+    it(&apos;should throw an error for big moves&apos;, async () =&gt; {
+      const { body } = await request(app)
+        .get(&apos;/positions/knight/a1?moves=21&apos;)
+        .expect(400);
+      expect(body).toHaveProperty(&apos;error_name&apos;, &apos;BadRequestError&apos;);
+      expect(body).toHaveProperty(&apos;error_message&apos;, &apos;Invalid number of moves.&apos;);
+      expect(body).toHaveProperty(&apos;status_code&apos;, 400);
+      expect(body).toHaveProperty(&apos;error&apos;);
+      expect(body.error).toHaveLength(1);
+      expect(body.error[0]).toHaveProperty(&apos;field&apos;, &apos;moves&apos;);
+      expect(body.error[0]).toHaveProperty(&apos;message&apos;, &apos;moves is invalid&apos;);
+    });
+  });
+});
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

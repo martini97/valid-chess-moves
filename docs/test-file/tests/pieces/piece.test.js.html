@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">tests/pieces/piece.test.js | valid-chess-moves</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Calculates all the possible positions that a chess Knight can take in exactly two moves."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="valid-chess-moves"><meta property="twitter:description" content="Calculates all the possible positions that a chess Knight can take in exactly two moves."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/martini97/valid-chess-moves"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-app">app</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#controllers">controllers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-positions">positions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers-pieces">helpers/pieces</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helpers/pieces/knight.js~Knight.html">Knight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helpers/pieces/piece.js~Piece.html">Piece</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#middlewares">middlewares</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-errors">errors</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pieces">pieces</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pieces/knight.js~Knight.html">Knight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pieces/piece.js~Piece.html">Piece</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#presenters">presenters</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-positions">positions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#routes">routes</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-router">router</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#validators">validators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-algebraicnotation">algebraicnotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-coordinates">coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-moves">moves</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">tests/pieces/piece.test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Piece from &apos;@/pieces/piece&apos;;
+import allPositions from &apos;../fixtures/pieces/all-positions.json&apos;;
+
+/**
+ * @test {Piece}
+ */
+describe(&apos;Given a Piece&apos;, () =&gt; {
+  /**
+   * @test {Piece#rules}
+   */
+  it(&apos;should have no rules&apos;, () =&gt; {
+    const piece = new Piece(&apos;A1&apos;);
+    expect(piece.rules.length).toEqual(0);
+  });
+
+  /**
+   * @test {Piece#possiblePositions}
+   */
+  it(&apos;should not be able to move&apos;, () =&gt; {
+    const piece = new Piece(&apos;A1&apos;);
+    expect(piece.possiblePositions().length).toEqual(0);
+  });
+
+  /**
+   * @test {Piece#possiblePositionsInNMoves}
+   */
+  it(&apos;next N moves should always return [] for N &gt; 0&apos;, () =&gt; {
+    const piece = new Piece(&apos;A1&apos;);
+    [...Array(19)].map((_, n) =&gt; expect(piece.possiblePositionsInNMoves({ n: n + 1 }).length)
+      .toEqual(0));
+  });
+
+  describe(&apos;next N moves should throw an error for invalid N&apos;, () =&gt; {
+    function shouldThrowAnError(piece, n) {
+      /**
+       * @test {Piece#possiblePositionsInNMoves}
+       */
+      it(`N = ${n}`, () =&gt; {
+        expect(() =&gt; piece.possiblePositionsInNMoves({ n }))
+          .toThrowError(TypeError);
+      });
+    }
+
+    const piece = new Piece(&apos;A1&apos;);
+    shouldThrowAnError(piece, -1);
+    shouldThrowAnError(piece, 2.5);
+    shouldThrowAnError(piece, 21);
+    shouldThrowAnError(piece, Math.PI);
+    shouldThrowAnError(piece, -Math.PI);
+    shouldThrowAnError(piece, Infinity);
+    shouldThrowAnError(piece, -Infinity);
+  });
+  describe(&apos;initiated with an invalid algebraic position&apos;, () =&gt; {
+    function shouldThrowAnError(algebraic) {
+      /**
+       * @test {Piece.validateAlgebraicNotation}
+       */
+      it(`should throw an error [${algebraic}]`, () =&gt; {
+        expect(() =&gt; new Piece(algebraic)).toThrowError(TypeError);
+      });
+    }
+
+    shouldThrowAnError(&apos;8h&apos;);
+    shouldThrowAnError([1, 1]);
+    shouldThrowAnError(&apos;invalid algebraic position&apos;);
+    shouldThrowAnError(&apos;i1&apos;);
+    shouldThrowAnError(&apos;h9&apos;);
+    shouldThrowAnError(8);
+    shouldThrowAnError({ column: &apos;A&apos;, row: 8 });
+  });
+
+  describe(&apos;initiated with a valid algebraic position&apos;, () =&gt; {
+    function shouldSetCorrectCoordinates(algebraic, expected) {
+      /**
+       * @test {Piece#coordinates}
+       * @test {Piece#algebraicPosition}
+       */
+      it(`should set correct coordinates [${algebraic} =&gt; ${expected}]`, () =&gt; {
+        const piece = new Piece(algebraic);
+        expect(piece.coordinates).toEqual(expected);
+        expect(piece.algebraicPosition).toEqual(algebraic.toLowerCase());
+      });
+    }
+
+    function shouldGetCorrectAlgebraic(expected, coordinates) {
+      /**
+       * @test {Piece.toAlgebraic}
+       */
+      it(`should get correct algebraic [${coordinates} =&gt; ${expected}]`, () =&gt; {
+        expect(Piece.toAlgebraic(coordinates))
+          .toEqual(expected.toLowerCase());
+      });
+    }
+
+    allPositions.forEach(testData =&gt; shouldSetCorrectCoordinates(...testData));
+    allPositions.forEach(testData =&gt; shouldGetCorrectAlgebraic(...testData));
+  });
+
+  describe(&apos;testing for legal positions&apos;, () =&gt; {
+    function shouldValidateLegalPosition(pos, expected) {
+      /**
+       * @test {Piece.isLegalPosition}
+       */
+      it(`should consider ${pos} ${expected ? &apos;legal&apos; : &apos;ilegal&apos;}`, () =&gt; {
+        expect(Piece.isLegalPosition(pos)).toEqual(expected);
+      });
+    }
+    const legalMoves = [];
+    for (let i = 1; i &lt;= 8; i++) {
+      for (let j = 1; j &lt;= 8; j++) {
+        legalMoves.push([i, j]);
+      }
+    }
+
+    legalMoves.forEach(pos =&gt; shouldValidateLegalPosition(pos, true));
+    shouldValidateLegalPosition([-1, 2], false);
+    shouldValidateLegalPosition([1, -2], false);
+    shouldValidateLegalPosition([10, 2], false);
+    shouldValidateLegalPosition([1, 20], false);
+    shouldValidateLegalPosition([-1, 20], false);
+    shouldValidateLegalPosition([-10, -2], false);
+    shouldValidateLegalPosition(&apos;wrong parameter&apos;, false);
+    shouldValidateLegalPosition({}, false);
+    shouldValidateLegalPosition(2, false);
+  });
+});
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

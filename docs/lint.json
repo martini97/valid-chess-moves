@@ -1,1 +1,51 @@
-[]
+[
+  {
+    "name": "errors",
+    "filePath": "src/middlewares/errors.js",
+    "lines": [
+      {
+        "lineNumber": 0,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 1,
+        "line": " * Catches all erros not catched by error-meaning, logs them and return a 500 status."
+      },
+      {
+        "lineNumber": 2,
+        "line": " * @summary Error logging middleware."
+      },
+      {
+        "lineNumber": 3,
+        "line": " * @param {Object} err - The error."
+      },
+      {
+        "lineNumber": 4,
+        "line": " * @param {Object} req - The req."
+      },
+      {
+        "lineNumber": 5,
+        "line": " * @param {Object} res - The res."
+      },
+      {
+        "lineNumber": 6,
+        "line": " */"
+      },
+      {
+        "lineNumber": 7,
+        "line": "export default (err, req, res, next) => { // eslint-disable-line"
+      }
+    ],
+    "codeParams": [
+      "err",
+      "req",
+      "res",
+      "next"
+    ],
+    "docParams": [
+      "err",
+      "req",
+      "res"
+    ]
+  }
+]
