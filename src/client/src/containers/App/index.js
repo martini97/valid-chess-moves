@@ -17,6 +17,7 @@ class App extends Component {
           allPossible={this.props.positions.positions}
         />
         <Button
+          isLoading={this.props.positions.isLoading}
           disabled={this.props.positions.isLoading || !this.props.tile.selected}
           handleClick={this.props.actions.positions.get}
         >
