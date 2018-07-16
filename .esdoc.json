@@ -18,6 +18,7 @@
     {
       "name": "esdoc-ecmascript-proposal-plugin",
       "option": {
+        "exportExtensions": true,
         "classProperties": true
       }
     }

@@ -1,15 +1,21 @@
 window.esdocSearchIndex = [
   [
-    "valid-chess-moves/src/helpers/pieces/knight.js~knight",
-    "class/src/helpers/pieces/knight.js~Knight.html",
-    "<span>Knight</span> <span class=\"search-result-import-path\">valid-chess-moves/src/helpers/pieces/knight.js</span>",
+    "valid-chess-moves/src/pieces/knight.js~knight",
+    "class/src/pieces/knight.js~Knight.html",
+    "<span>Knight</span> <span class=\"search-result-import-path\">valid-chess-moves/src/pieces/knight.js</span>",
     "class"
   ],
   [
-    "valid-chess-moves/src/helpers/pieces/piece.js~piece",
-    "class/src/helpers/pieces/piece.js~Piece.html",
-    "<span>Piece</span> <span class=\"search-result-import-path\">valid-chess-moves/src/helpers/pieces/piece.js</span>",
+    "valid-chess-moves/src/pieces/piece.js~piece",
+    "class/src/pieces/piece.js~Piece.html",
+    "<span>Piece</span> <span class=\"search-result-import-path\">valid-chess-moves/src/pieces/piece.js</span>",
     "class"
+  ],
+  [
+    "valid-chess-moves/src/validators/algebraic-notation.js~algebraicnotation",
+    "function/index.html#static-function-algebraicnotation",
+    "<span>algebraicnotation</span> <span class=\"search-result-import-path\">valid-chess-moves/src/validators/algebraic-notation.js</span>",
+    "function"
   ],
   [
     "valid-chess-moves/src/app.js~app",
@@ -18,99 +24,189 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "knight src/helpers/pieces/knight.js~knight,knight",
-    "test-file/tests/helpers/pieces/knight.test.js.html#lineNumber8",
+    "valid-chess-moves/src/validators/coordinates.js~coordinates",
+    "function/index.html#static-function-coordinates",
+    "<span>coordinates</span> <span class=\"search-result-import-path\">valid-chess-moves/src/validators/coordinates.js</span>",
+    "function"
+  ],
+  [
+    "valid-chess-moves/src/middlewares/errors.js~errors",
+    "function/index.html#static-function-errors",
+    "<span>errors</span> <span class=\"search-result-import-path\">valid-chess-moves/src/middlewares/errors.js</span>",
+    "function"
+  ],
+  [
+    "valid-chess-moves/src/validators/moves.js~moves",
+    "function/index.html#static-function-moves",
+    "<span>moves</span> <span class=\"search-result-import-path\">valid-chess-moves/src/validators/moves.js</span>",
+    "function"
+  ],
+  [
+    "valid-chess-moves/src/controllers/positions.js~positions",
+    "function/index.html#static-function-positions",
+    "<span>positions</span> <span class=\"search-result-import-path\">valid-chess-moves/src/controllers/positions.js</span>",
+    "function"
+  ],
+  [
+    "valid-chess-moves/src/presenters/positions.js~positions",
+    "function/index.html#static-function-positions",
+    "<span>positions</span> <span class=\"search-result-import-path\">valid-chess-moves/src/presenters/positions.js</span>",
+    "function"
+  ],
+  [
+    "valid-chess-moves/src/routes/positions.js~router",
+    "variable/index.html#static-variable-router",
+    "<span>router</span> <span class=\"search-result-import-path\">valid-chess-moves/src/routes/positions.js</span>",
+    "variable"
+  ],
+  [
+    "knight src/pieces/knight.js~knight,knight",
+    "test-file/tests/pieces/knight.test.js.html#lineNumber8",
     "Given a Knight",
     "test"
   ],
   [
-    "knight#possiblepositionsinnmoves src/helpers/pieces/piece.js~piece#possiblepositionsinnmoves,knight#possiblepositionsinnmoves",
-    "test-file/tests/helpers/pieces/knight.test.js.html#lineNumber13",
+    "knight#possiblepositionsinnmoves src/pieces/piece.js~piece#possiblepositionsinnmoves,knight#possiblepositionsinnmoves",
+    "test-file/tests/pieces/knight.test.js.html#lineNumber13",
     "Given a Knight should return all valid positions",
     "test"
   ],
   [
-    "knight#possiblepositionsinnmoves src/helpers/pieces/piece.js~piece#possiblepositionsinnmoves,knight#possiblepositionsinnmoves",
-    "test-file/tests/helpers/pieces/knight.test.js.html#lineNumber27",
+    "knight#possiblepositionsinnmoves src/pieces/piece.js~piece#possiblepositionsinnmoves,knight#possiblepositionsinnmoves",
+    "test-file/tests/pieces/knight.test.js.html#lineNumber27",
     "Given a Knight should return all valid positions for it in 2 moves",
     "test"
   ],
   [
-    "piece src/helpers/pieces/piece.js~piece,piece",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber7",
+    "piece src/pieces/piece.js~piece,piece",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber7",
     "Given a Piece",
     "test"
   ],
   [
     "",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber72",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber72",
     "Given a Piece initiated with a valid algebraic position",
     "test"
   ],
   [
-    "piece.toalgebraic src/helpers/pieces/piece.js~piece.toalgebraic,piece.toalgebraic",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber89",
+    "piece.toalgebraic src/pieces/piece.js~piece.toalgebraic,piece.toalgebraic",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber89",
     "Given a Piece initiated with a valid algebraic position ",
     "test"
   ],
   [
-    "piece#coordinates piece#algebraicposition src/helpers/pieces/piece.js~piece#coordinates,piece#coordinates src/helpers/pieces/piece.js~piece#algebraicposition,piece#algebraicposition",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber78",
+    "piece#coordinates piece#algebraicposition src/pieces/piece.js~piece#coordinates,piece#coordinates src/pieces/piece.js~piece#algebraicposition,piece#algebraicposition",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber78",
     "Given a Piece initiated with a valid algebraic position ",
     "test"
   ],
   [
     "",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber53",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber53",
     "Given a Piece initiated with an invalid algebraic position",
     "test"
   ],
   [
-    "piece.validatealgebraicnotation src/helpers/pieces/piece.js~piece.validatealgebraicnotation,piece.validatealgebraicnotation",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber58",
+    "piece.validatealgebraicnotation src/pieces/piece.js~piece.validatealgebraicnotation,piece.validatealgebraicnotation",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber58",
     "Given a Piece initiated with an invalid algebraic position ",
     "test"
   ],
   [
-    "piece#possiblepositionsinnmoves src/helpers/pieces/piece.js~piece#possiblepositionsinnmoves,piece#possiblepositionsinnmoves",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber27",
+    "piece#possiblepositionsinnmoves src/pieces/piece.js~piece#possiblepositionsinnmoves,piece#possiblepositionsinnmoves",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber27",
     "Given a Piece next N moves should always return [] for N > 0",
     "test"
   ],
   [
     "",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber33",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber33",
     "Given a Piece next N moves should throw an error for invalid N",
     "test"
   ],
   [
-    "piece#possiblepositionsinnmoves src/helpers/pieces/piece.js~piece#possiblepositionsinnmoves,piece#possiblepositionsinnmoves",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber38",
+    "piece#possiblepositionsinnmoves src/pieces/piece.js~piece#possiblepositionsinnmoves,piece#possiblepositionsinnmoves",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber38",
     "Given a Piece next N moves should throw an error for invalid N ",
     "test"
   ],
   [
-    "piece#rules src/helpers/pieces/piece.js~piece#rules,piece#rules",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber11",
+    "piece#rules src/pieces/piece.js~piece#rules,piece#rules",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber11",
     "Given a Piece should have no rules",
     "test"
   ],
   [
-    "piece#possiblepositions src/helpers/pieces/piece.js~piece#possiblepositions,piece#possiblepositions",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber19",
+    "piece#possiblepositions src/pieces/piece.js~piece#possiblepositions,piece#possiblepositions",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber19",
     "Given a Piece should not be able to move",
     "test"
   ],
   [
     "",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber99",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber99",
     "Given a Piece testing for legal positions",
     "test"
   ],
   [
-    "piece.islegalposition src/helpers/pieces/piece.js~piece.islegalposition,piece.islegalposition",
-    "test-file/tests/helpers/pieces/piece.test.js.html#lineNumber104",
+    "piece.islegalposition src/pieces/piece.js~piece.islegalposition,piece.islegalposition",
+    "test-file/tests/pieces/piece.test.js.html#lineNumber104",
     "Given a Piece testing for legal positions ",
+    "test"
+  ],
+  [
+    "app src/app.js~app,app",
+    "test-file/tests/app.test.js.html#lineNumber7",
+    "Given the app",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/app.test.js.html#lineNumber23",
+    "Given the app When getting a implemented piece",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/app.test.js.html#lineNumber35",
+    "Given the app When getting a implemented piece should allow query for n of moves",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/app.test.js.html#lineNumber24",
+    "Given the app When getting a implemented piece should return possible positions",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/app.test.js.html#lineNumber75",
+    "Given the app When getting a implemented piece should throw an error for big moves",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/app.test.js.html#lineNumber49",
+    "Given the app When getting a implemented piece should throw an error for invalid position",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/app.test.js.html#lineNumber62",
+    "Given the app When getting a implemented piece should throw an error for negative moves",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/app.test.js.html#lineNumber8",
+    "Given the app When getting a not implemented piece",
+    "test"
+  ],
+  [
+    "",
+    "test-file/tests/app.test.js.html#lineNumber9",
+    "Given the app When getting a not implemented piece should return an error",
     "test"
   ],
   [
@@ -408,100 +504,10 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/helpers/pieces/knight.js",
-    "file/src/helpers/pieces/knight.js.html",
-    "src/helpers/pieces/knight.js",
+    "src/controllers/positions.js",
+    "file/src/controllers/positions.js.html",
+    "src/controllers/positions.js",
     "file"
-  ],
-  [
-    "src/helpers/pieces/knight.js~knight#rules",
-    "class/src/helpers/pieces/knight.js~Knight.html#instance-member-rules",
-    "src/helpers/pieces/knight.js~Knight#rules",
-    "member"
-  ],
-  [
-    "src/helpers/pieces/piece.js",
-    "file/src/helpers/pieces/piece.js.html",
-    "src/helpers/pieces/piece.js",
-    "file"
-  ],
-  [
-    "src/helpers/pieces/piece.js~piece#algebraicposition",
-    "class/src/helpers/pieces/piece.js~Piece.html#instance-member-algebraicPosition",
-    "src/helpers/pieces/piece.js~Piece#algebraicPosition",
-    "member"
-  ],
-  [
-    "src/helpers/pieces/piece.js~piece#constructor",
-    "class/src/helpers/pieces/piece.js~Piece.html#instance-constructor-constructor",
-    "src/helpers/pieces/piece.js~Piece#constructor",
-    "method"
-  ],
-  [
-    "src/helpers/pieces/piece.js~piece#coordinates",
-    "class/src/helpers/pieces/piece.js~Piece.html#instance-member-coordinates",
-    "src/helpers/pieces/piece.js~Piece#coordinates",
-    "member"
-  ],
-  [
-    "src/helpers/pieces/piece.js~piece#possiblepositions",
-    "class/src/helpers/pieces/piece.js~Piece.html#instance-method-possiblePositions",
-    "src/helpers/pieces/piece.js~Piece#possiblePositions",
-    "method"
-  ],
-  [
-    "src/helpers/pieces/piece.js~piece#possiblepositionsinnmoves",
-    "class/src/helpers/pieces/piece.js~Piece.html#instance-method-possiblePositionsInNMoves",
-    "src/helpers/pieces/piece.js~Piece#possiblePositionsInNMoves",
-    "method"
-  ],
-  [
-    "src/helpers/pieces/piece.js~piece#rules",
-    "class/src/helpers/pieces/piece.js~Piece.html#instance-member-rules",
-    "src/helpers/pieces/piece.js~Piece#rules",
-    "member"
-  ],
-  [
-    "src/helpers/pieces/piece.js~piece.fromalgebraic",
-    "class/src/helpers/pieces/piece.js~Piece.html#static-method-fromAlgebraic",
-    "src/helpers/pieces/piece.js~Piece.fromAlgebraic",
-    "method"
-  ],
-  [
-    "src/helpers/pieces/piece.js~piece.islegalposition",
-    "class/src/helpers/pieces/piece.js~Piece.html#static-method-isLegalPosition",
-    "src/helpers/pieces/piece.js~Piece.isLegalPosition",
-    "method"
-  ],
-  [
-    "src/helpers/pieces/piece.js~piece.toalgebraic",
-    "class/src/helpers/pieces/piece.js~Piece.html#static-method-toAlgebraic",
-    "src/helpers/pieces/piece.js~Piece.toAlgebraic",
-    "method"
-  ],
-  [
-    "src/helpers/pieces/piece.js~piece.validatealgebraicnotation",
-    "class/src/helpers/pieces/piece.js~Piece.html#static-method-validateAlgebraicNotation",
-    "src/helpers/pieces/piece.js~Piece.validateAlgebraicNotation",
-    "method"
-  ],
-  [
-    "src/helpers/pieces/types.jsdoc",
-    "file/src/helpers/pieces/types.jsdoc.html",
-    "src/helpers/pieces/types.jsdoc",
-    "file"
-  ],
-  [
-    "src/helpers/pieces/types.jsdoc~algebraicnotation",
-    "typedef/index.html#static-typedef-AlgebraicNotation",
-    "src/helpers/pieces/types.jsdoc~AlgebraicNotation",
-    "typedef"
-  ],
-  [
-    "src/helpers/pieces/types.jsdoc~coordinates",
-    "typedef/index.html#static-typedef-Coordinates",
-    "src/helpers/pieces/types.jsdoc~Coordinates",
-    "typedef"
   ],
   [
     "src/index.js",
@@ -510,15 +516,183 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "tests/helpers/pieces/knight.test.js",
-    "test-file/tests/helpers/pieces/knight.test.js.html",
-    "tests/helpers/pieces/knight.test.js",
+    "src/middlewares/errors.js",
+    "file/src/middlewares/errors.js.html",
+    "src/middlewares/errors.js",
+    "file"
+  ],
+  [
+    "src/middlewares/index.js",
+    "file/src/middlewares/index.js.html",
+    "src/middlewares/index.js",
+    "file"
+  ],
+  [
+    "src/pieces/index.js",
+    "file/src/pieces/index.js.html",
+    "src/pieces/index.js",
+    "file"
+  ],
+  [
+    "src/pieces/knight.js",
+    "file/src/pieces/knight.js.html",
+    "src/pieces/knight.js",
+    "file"
+  ],
+  [
+    "src/pieces/knight.js~knight#rules",
+    "class/src/pieces/knight.js~Knight.html#instance-member-rules",
+    "src/pieces/knight.js~Knight#rules",
+    "member"
+  ],
+  [
+    "src/pieces/piece.js",
+    "file/src/pieces/piece.js.html",
+    "src/pieces/piece.js",
+    "file"
+  ],
+  [
+    "src/pieces/piece.js~piece#algebraicposition",
+    "class/src/pieces/piece.js~Piece.html#instance-member-algebraicPosition",
+    "src/pieces/piece.js~Piece#algebraicPosition",
+    "member"
+  ],
+  [
+    "src/pieces/piece.js~piece#constructor",
+    "class/src/pieces/piece.js~Piece.html#instance-constructor-constructor",
+    "src/pieces/piece.js~Piece#constructor",
+    "method"
+  ],
+  [
+    "src/pieces/piece.js~piece#coordinates",
+    "class/src/pieces/piece.js~Piece.html#instance-member-coordinates",
+    "src/pieces/piece.js~Piece#coordinates",
+    "member"
+  ],
+  [
+    "src/pieces/piece.js~piece#possiblepositions",
+    "class/src/pieces/piece.js~Piece.html#instance-method-possiblePositions",
+    "src/pieces/piece.js~Piece#possiblePositions",
+    "method"
+  ],
+  [
+    "src/pieces/piece.js~piece#possiblepositionsinnmoves",
+    "class/src/pieces/piece.js~Piece.html#instance-method-possiblePositionsInNMoves",
+    "src/pieces/piece.js~Piece#possiblePositionsInNMoves",
+    "method"
+  ],
+  [
+    "src/pieces/piece.js~piece#rules",
+    "class/src/pieces/piece.js~Piece.html#instance-member-rules",
+    "src/pieces/piece.js~Piece#rules",
+    "member"
+  ],
+  [
+    "src/pieces/piece.js~piece.fromalgebraic",
+    "class/src/pieces/piece.js~Piece.html#static-method-fromAlgebraic",
+    "src/pieces/piece.js~Piece.fromAlgebraic",
+    "method"
+  ],
+  [
+    "src/pieces/piece.js~piece.islegalposition",
+    "class/src/pieces/piece.js~Piece.html#static-method-isLegalPosition",
+    "src/pieces/piece.js~Piece.isLegalPosition",
+    "method"
+  ],
+  [
+    "src/pieces/piece.js~piece.toalgebraic",
+    "class/src/pieces/piece.js~Piece.html#static-method-toAlgebraic",
+    "src/pieces/piece.js~Piece.toAlgebraic",
+    "method"
+  ],
+  [
+    "src/pieces/piece.js~piece.validatealgebraicnotation",
+    "class/src/pieces/piece.js~Piece.html#static-method-validateAlgebraicNotation",
+    "src/pieces/piece.js~Piece.validateAlgebraicNotation",
+    "method"
+  ],
+  [
+    "src/pieces/types.jsdoc",
+    "file/src/pieces/types.jsdoc.html",
+    "src/pieces/types.jsdoc",
+    "file"
+  ],
+  [
+    "src/pieces/types.jsdoc~algebraicnotation",
+    "typedef/index.html#static-typedef-AlgebraicNotation",
+    "src/pieces/types.jsdoc~AlgebraicNotation",
+    "typedef"
+  ],
+  [
+    "src/pieces/types.jsdoc~coordinates",
+    "typedef/index.html#static-typedef-Coordinates",
+    "src/pieces/types.jsdoc~Coordinates",
+    "typedef"
+  ],
+  [
+    "src/presenters/index.js",
+    "file/src/presenters/index.js.html",
+    "src/presenters/index.js",
+    "file"
+  ],
+  [
+    "src/presenters/positions.js",
+    "file/src/presenters/positions.js.html",
+    "src/presenters/positions.js",
+    "file"
+  ],
+  [
+    "src/routes/index.js",
+    "file/src/routes/index.js.html",
+    "src/routes/index.js",
+    "file"
+  ],
+  [
+    "src/routes/positions.js",
+    "file/src/routes/positions.js.html",
+    "src/routes/positions.js",
+    "file"
+  ],
+  [
+    "src/validators/algebraic-notation.js",
+    "file/src/validators/algebraic-notation.js.html",
+    "src/validators/algebraic-notation.js",
+    "file"
+  ],
+  [
+    "src/validators/coordinates.js",
+    "file/src/validators/coordinates.js.html",
+    "src/validators/coordinates.js",
+    "file"
+  ],
+  [
+    "src/validators/index.js",
+    "file/src/validators/index.js.html",
+    "src/validators/index.js",
+    "file"
+  ],
+  [
+    "src/validators/moves.js",
+    "file/src/validators/moves.js.html",
+    "src/validators/moves.js",
+    "file"
+  ],
+  [
+    "tests/app.test.js",
+    "test-file/tests/app.test.js.html",
+    "tests/app.test.js",
     "testFile"
   ],
   [
-    "tests/helpers/pieces/piece.test.js",
-    "test-file/tests/helpers/pieces/piece.test.js.html",
-    "tests/helpers/pieces/piece.test.js",
+    "tests/pieces/knight.test.js",
+    "test-file/tests/pieces/knight.test.js.html",
+    "tests/pieces/knight.test.js",
+    "testFile"
+  ],
+  [
+    "tests/pieces/piece.test.js",
+    "test-file/tests/pieces/piece.test.js.html",
+    "tests/pieces/piece.test.js",
     "testFile"
   ]
 ]
