@@ -7,5 +7,5 @@
  */
 export default (err, req, res) => {
   console.error(`${new Date().toISOString()} `, err.stack || err); // eslint-disable-line no-console
-  if (err) res.sendStatus(500);
+  if (err) res.status(500).send();
 };
