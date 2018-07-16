@@ -1,4 +1,4 @@
-import { grey, blue } from '@material-ui/core/colors';
+import { grey, blue, indigo } from '@material-ui/core/colors';
 
 export default theme => ({
   tile: {
@@ -14,7 +14,7 @@ export default theme => ({
     backgroundColor: grey[400],
   },
   blackPossible: {
-    backgroundColor: blue[900],
+    backgroundColor: indigo[400],
   },
   whitePossible: {
     backgroundColor: blue[400],
