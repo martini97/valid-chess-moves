@@ -1,0 +1,1197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div
+  className="MuiGrid-container-104 Board-board-103"
+>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`snapshot 2`] = `
+<div
+  className="MuiGrid-container-104 Board-board-103"
+>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`snapshot 3`] = `
+<div
+  className="MuiGrid-container-104 Board-board-103"
+>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    >
+      <span
+        aria-label="horse"
+        className="Knight-knight-205"
+        role="img"
+      >
+        🐴
+      </span>
+    </div>
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-whitePossible-204"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`snapshot 4`] = `
+<div
+  className="MuiGrid-container-104 Board-board-103"
+>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    >
+      <span
+        aria-label="horse"
+        className="Knight-knight-205"
+        role="img"
+      >
+        🐴
+      </span>
+    </div>
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="MuiGrid-container-104"
+  >
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-white-202"
+      onClick={[Function]}
+    />
+    <div
+      className="MuiGrid-item-105 Tile-tile-200 Tile-black-201"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;

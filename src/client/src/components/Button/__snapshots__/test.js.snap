@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div
+  className="Button-container-38"
+>
+  <button
+    className="MuiButtonBase-root-63 MuiButton-root-39 MuiButton-contained-48 MuiButton-containedPrimary-49 MuiButton-raised-51 MuiButton-raisedPrimary-52 Button-button-37"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <span
+      className="MuiButton-label-40"
+    >
+      children
+    </span>
+    <span
+      className="MuiTouchRipple-root-66"
+    />
+  </button>
+</div>
+`;

@@ -14,6 +14,7 @@
     "heroku:deploy": "cd src/client && yarn install && yarn build",
     "test:coverage": "jest --coverage --coverageReporters=text-lcov --testPathIgnorePatterns src/client | coveralls",
     "test:watch": "NODE_ENV=test jest --watch --testPathIgnorePatterns src/client",
+    "test:client": "cd src/client && yarn test",
     "test": "NODE_ENV=test jest --testPathIgnorePatterns src/client"
   },
   "husky": {
