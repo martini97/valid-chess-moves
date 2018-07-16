@@ -9,5 +9,6 @@ export default theme => ({
     width: '80vmin',
     height: '80vmin',
     margin: 'auto',
+    overflow: 'hidden',
   },
 });
