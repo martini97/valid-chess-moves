@@ -1,4 +1,4 @@
-import { BadRequestError } from 'meaning-error';
+import * as validators from '@/validators';
 
 /** Class representing a generic chess piece. */
 class Piece {
@@ -32,19 +32,13 @@ class Piece {
   /**
    * Validates if a position is in algebraic notation.
    * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
-   * @throws {BadRequestError} Throws a BadRequestError if the given algebraicPosition
-   * is invalid.
+   * @throws {TypeError} Throws a TypeError if the given algebraicPosition is invalid.
    * @returns {AlgebraicNotation} The validated algebraic notation.
    */
   static validateAlgebraicNotation(algebraicPosition) {
-    if (typeof algebraicPosition !== 'string'
-          || !algebraicPosition.toLowerCase().match(/^[a-h][1-8]$/)) {
-      throw new BadRequestError(
-        'Invalid algebraic position',
-        [{ field: 'algebraic', message: 'Param `algebraic` is invalid.' }],
-      );
+    if (!validators.algebraicNotation(algebraicPosition)) {
+      throw new TypeError('Invalid algebraic position');
     }
-
     return algebraicPosition.toLowerCase();
   }
 
@@ -73,9 +67,7 @@ class Piece {
    * @returns {Boolean} Whether or not the given position is legal.
    */
   static isLegalPosition(coordinates) {
-    return coordinates.length > 0
-      && Math.max(...coordinates) <= 8
-      && Math.min(...coordinates) >= 1;
+    return validators.coordinates(coordinates);
   }
 
   /**
@@ -98,16 +90,13 @@ class Piece {
    * piece. Defaults to the position of the current piece.
    * @param {Integer} [movesInfo.n=1] - Number of moves, where 0 < n < 20.
    * @param {Coordinates[]} [movesInfo.positions=[]] - Array of positions. Used for recursion.
-   * @throws {BadRequestError} Throws a BadRequestError if the given n is invalid.
+   * @throws {TypeError} Throws a TypeError if the given n is invalid.
    * @returns {AlgebraicNotation[]} Every possible coordinates that the piece can reach,
    * it includes coordinates out of the board.
    */
   possiblePositionsInNMoves({ startAt = this.coordinates, n = 1, positions = [] } = {}) {
-    if (!Number.isInteger(n) || n < 0 || n > 20) {
-      throw new BadRequestError(
-        'Invalid argument, moves should be an integer 0 < moves < 20',
-        [{ field: 'moves', message: 'Param `moves` is invalid.' }],
-      );
+    if (!validators.moves(n) && n !== 0) {
+      throw new TypeError('Invalid argument, moves should be an integer 0 < moves < 20');
     }
 
     if (n === 0) return positions;

@@ -26,7 +26,7 @@ describe('Given a Piece', () => {
    */
   it('next N moves should always return [] for N > 0', () => {
     const piece = new Piece('A1');
-    [...Array(20)].map((_, n) => expect(piece.possiblePositionsInNMoves({ n }).length)
+    [...Array(19)].map((_, n) => expect(piece.possiblePositionsInNMoves({ n: n + 1 }).length)
       .toEqual(0));
   });
 
@@ -37,7 +37,7 @@ describe('Given a Piece', () => {
        */
       it(`N = ${n}`, () => {
         expect(() => piece.possiblePositionsInNMoves({ n }))
-          .toThrowError('Invalid argument, moves should be an integer 0 < moves < 20');
+          .toThrowError(TypeError);
       });
     }
 
@@ -56,7 +56,7 @@ describe('Given a Piece', () => {
        * @test {Piece.validateAlgebraicNotation}
        */
       it(`should throw an error [${algebraic}]`, () => {
-        expect(() => new Piece(algebraic)).toThrowError('Invalid algebraic position');
+        expect(() => new Piece(algebraic)).toThrowError(TypeError);
       });
     }
 

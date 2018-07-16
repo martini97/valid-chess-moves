@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/pieces/piece.js | valid-chess-moves</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Calculates all the possible positions that a chess Knight can take in exactly two moves."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="valid-chess-moves"><meta property="twitter:description" content="Calculates all the possible positions that a chess Knight can take in exactly two moves."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/martini97/valid-chess-moves"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-app">app</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#controllers">controllers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-positions">positions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#middlewares">middlewares</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-errors">errors</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pieces">pieces</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pieces/knight.js~Knight.html">Knight</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pieces/piece.js~Piece.html">Piece</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AlgebraicNotation">AlgebraicNotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Coordinates">Coordinates</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#presenters">presenters</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-positions">positions</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#routes">routes</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-router">router</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#validators">validators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-algebraicnotation">algebraicnotation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-coordinates">coordinates</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-moves">moves</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/pieces/piece.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import * as validators from &apos;@/validators&apos;;
+
+/** Class representing a generic chess piece. */
+class Piece {
+  /**
+   * Create a Piece in the given position.
+   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
+   */
+  constructor(algebraicPosition) {
+    /**
+    The algebraic position of the piece.
+    @type AlgebraicNotation
+    */
+    this.algebraicPosition = Piece.validateAlgebraicNotation(algebraicPosition);
+
+    /**
+    The coordinates of the piece.
+    @type Coordinates
+    */
+    this.coordinates = Piece.fromAlgebraic(algebraicPosition);
+  }
+
+  /**
+   * This field defines the overall rules for the movement of a piece,
+   * override it on the specific piece class with the piece rule.
+   * @summary The rules for the piece movement.
+   * @abstract
+   * @type {Coordinates[]}
+   */
+  rules = [];
+
+  /**
+   * Validates if a position is in algebraic notation.
+   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
+   * @throws {TypeError} Throws a TypeError if the given algebraicPosition is invalid.
+   * @returns {AlgebraicNotation} The validated algebraic notation.
+   */
+  static validateAlgebraicNotation(algebraicPosition) {
+    if (!validators.algebraicNotation(algebraicPosition)) {
+      throw new TypeError(&apos;Invalid algebraic position&apos;);
+    }
+    return algebraicPosition.toLowerCase();
+  }
+
+  /**
+   * Converts from algebric notation to coordinates.
+   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.
+   * @returns {Coordinates} An array in the form [column, row]
+   */
+  static fromAlgebraic(algebraicPosition) {
+    const [column, row] = algebraicPosition.toLowerCase().split(&apos;&apos;);
+    return [column.charCodeAt(0) - 96, parseInt(row, 10)];
+  }
+
+  /**
+   * Converts from coordinates to algebric notation.
+   * @param {Coordinates} coordinates -  The coordinates of the piece.
+   * @returns {AlgebraicNotation} The position of the piece in algebraic notation.
+   */
+  static toAlgebraic(coordinates) {
+    return `${String.fromCharCode(96 + coordinates[0])}${parseInt(coordinates[1], 10)}`;
+  }
+
+  /**
+   * Checks if a given position is valid or not.
+   * @param {Coordinates} coordinates - The coordinates of the piece.
+   * @returns {Boolean} Whether or not the given position is legal.
+   */
+  static isLegalPosition(coordinates) {
+    return validators.coordinates(coordinates);
+  }
+
+  /**
+   * All the possible (legal) movements of a piece.
+   * @private
+   * @param {Coordinates} startAt - Starting position of piece.
+   * @returns {Coordinates[]} - Every possible coordinates that the piece can reach,
+   * it includes coordinates out of the board.
+   */
+  possiblePositions(startAt) { // eslint-disable-line
+    return this.rules
+      .map(rule =&gt; [startAt[0] + rule[0], startAt[1] + rule[1]])
+      .filter(position =&gt; this.constructor.isLegalPosition(position));
+  }
+
+  /**
+   * All the possible (legal) movements of a piece after n moves.
+   * @param {Object} movesInfo - Object containing the params.
+   * @param {Coordinates} [movesInfo.startAt=this.coordinates] - Starting position of the
+   * piece. Defaults to the position of the current piece.
+   * @param {Integer} [movesInfo.n=1] - Number of moves, where 0 &lt; n &lt; 20.
+   * @param {Coordinates[]} [movesInfo.positions=[]] - Array of positions. Used for recursion.
+   * @throws {TypeError} Throws a TypeError if the given n is invalid.
+   * @returns {AlgebraicNotation[]} Every possible coordinates that the piece can reach,
+   * it includes coordinates out of the board.
+   */
+  possiblePositionsInNMoves({ startAt = this.coordinates, n = 1, positions = [] } = {}) {
+    if (!validators.moves(n) &amp;&amp; n !== 0) {
+      throw new TypeError(&apos;Invalid argument, moves should be an integer 0 &lt; moves &lt; 20&apos;);
+    }
+
+    if (n === 0) return positions;
+
+    const currentPossiblePositions = this.possiblePositions(startAt);
+
+    if (n === 1) positions.push(...currentPossiblePositions);
+
+    currentPossiblePositions.forEach((position) =&gt; {
+      this.possiblePositionsInNMoves({ startAt: position, n: n - 1, positions });
+    });
+
+    return Array.from(new Set(positions.map(position =&gt; Piece.toAlgebraic(position))));
+  }
+}
+
+export default Piece;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

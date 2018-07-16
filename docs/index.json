@@ -567,7 +567,7 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/app.js",
-    "content": "import express from 'express';\nimport path from 'path';\n\nconst app = express();\n\napp.use(express.static(path.join(__dirname, 'client/build')));\napp.get('*', (req, res) => {\n  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));\n});\n\nexport default app;\n",
+    "content": "import express from 'express';\nimport path from 'path';\nimport meaningError from 'meaning-error-middleware';\n\nimport * as routes from '@/routes';\nimport * as middlewares from '@/middlewares';\n\nconst app = express();\n\napp.use('/positions', routes.positions);\n\napp.use(meaningError);\napp.use(middlewares.errors);\n\napp.use(express.static(path.join(__dirname, 'client/build')));\napp.get('*', (req, res) => {\n  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));\n});\n\nexport default app;\n",
     "static": true,
     "longname": "/home/martini/Projects/valid-chess-moves/src/app.js",
     "access": "public",
@@ -586,7 +586,7 @@
     "importPath": "valid-chess-moves/src/app.js",
     "importStyle": "app",
     "description": null,
-    "lineNumber": 4,
+    "lineNumber": 8,
     "undocument": true,
     "type": {
       "types": [
@@ -598,7 +598,7 @@
     "__docId__": 50,
     "kind": "file",
     "name": "src/config.js",
-    "content": "export default {\n  http: {\n    port: process.env.PORT || '8080',\n  },\n};\n",
+    "content": "export default {\n  http: {\n    port: process.env.PORT || '8080',\n  },\n  env: process.env.NODE_ENV || 'development',\n};\n",
     "static": true,
     "longname": "/home/martini/Projects/valid-chess-moves/src/config.js",
     "access": "public",
@@ -608,24 +608,221 @@
   {
     "__docId__": 51,
     "kind": "file",
-    "name": "src/helpers/pieces/knight.js",
-    "content": "import Piece from './piece';\n\n/**\n * Class representing a Knight piece.\n * @param {AlgebraicNotation} algebraicPosition - The algebraic position of the Knight.\n * @extends {Piece}\n */\nclass Knight extends Piece {\n  /**\n   * @override\n   */\n  rules = [\n    [+2, +1],\n    [+2, -1],\n    [-2, -1],\n    [-2, +1],\n    [+1, +2],\n    [+1, -2],\n    [-1, -2],\n    [-1, +2],\n  ];\n}\n\nexport default Knight;\n",
+    "name": "src/controllers/positions.js",
+    "content": "import { BadRequestError } from 'meaning-error';\nimport * as pieces from '@/pieces';\nimport * as presenters from '@/presenters';\nimport * as validators from '@/validators';\n\n/**\n * Controller for the /positions/:piece/:startAt.\n * @param {Object} req - The request object.\n * @param {Object} req.params - The params object.\n * @param {String} req.params.piece - The type of the piece. eg: knight.\n * @param {Object} req.query - The query object.\n * @param {Number} [req.query.moves] - The number of moves to calculate.\n * @param {Object} res - The response object.\n * @throws {BadRequestError} Throws a BadRequestError if the validation of params\n * or query fails.\n */\nexport default (req, res) => {\n  const { params: { piece: pieceName, startAt }, query: { moves = 2 } } = req;\n  const n = Number.parseInt(moves, 10);\n\n  if (!validators.algebraicNotation(startAt)) {\n    throw new BadRequestError(\n      'Invalid algebraic position.',\n      [{\n        field: 'startAt',\n        message: 'startAt is invalid',\n      }],\n    );\n  }\n\n  if (!validators.moves(n)) {\n    throw new BadRequestError(\n      'Invalid number of moves.',\n      [{\n        field: 'moves',\n        message: 'moves is invalid',\n      }],\n    );\n  }\n\n  if (!(pieceName in pieces)) {\n    throw new BadRequestError(\n      `Invalid piece. Valid pieces: ${Object.keys(pieces)}.`,\n      [{\n        field: 'piece',\n        message: 'piece is invalid',\n      }],\n    );\n  }\n\n  const piece = new pieces[pieceName](startAt);\n  const positions = piece.possiblePositionsInNMoves({ n });\n  res.status(200).send(presenters.positions(req, positions));\n};\n",
     "static": true,
-    "longname": "/home/martini/Projects/valid-chess-moves/src/helpers/pieces/knight.js",
+    "longname": "/home/martini/Projects/valid-chess-moves/src/controllers/positions.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
     "__docId__": 52,
-    "kind": "class",
-    "name": "Knight",
-    "memberof": "src/helpers/pieces/knight.js",
+    "kind": "function",
+    "name": "positions",
+    "memberof": "src/controllers/positions.js",
+    "generator": false,
+    "async": false,
     "static": true,
-    "longname": "src/helpers/pieces/knight.js~Knight",
+    "longname": "src/controllers/positions.js~positions",
     "access": "public",
     "export": true,
-    "importPath": "valid-chess-moves/src/helpers/pieces/knight.js",
+    "importPath": "valid-chess-moves/src/controllers/positions.js",
+    "importStyle": "positions",
+    "description": "Controller for the /positions/:piece/:startAt.",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "req",
+        "description": "The request object."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "req.params",
+        "description": "The params object."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "req.params.piece",
+        "description": "The type of the piece. eg: knight."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "req.query",
+        "description": "The query object."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "req.query.moves",
+        "description": "The number of moves to calculate."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res",
+        "description": "The response object."
+      }
+    ],
+    "throws": [
+      {
+        "types": [
+          "BadRequestError"
+        ],
+        "description": "Throws a BadRequestError if the validation of params\nor query fails."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 53,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "import app from './app';\nimport config from './config';\n\n/* eslint no-console:0 */\napp.listen(config.http.port, () => console.log(`Listening on ${config.http.port}`));\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 54,
+    "kind": "file",
+    "name": "src/middlewares/errors.js",
+    "content": "/**\n * Catches all erros not catched by error-meaning, logs them and return a 500 status.\n * @summary Error logging middleware.\n * @param {Object} err - The error.\n * @param {Object} req - The req.\n * @param {Object} res - The res.\n */\nexport default (err, req, res) => {\n  console.error(`${new Date().toISOString()} `, err.stack || err); // eslint-disable-line no-console\n  if (err) res.sendStatus(500);\n};\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/middlewares/errors.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 55,
+    "kind": "function",
+    "name": "errors",
+    "memberof": "src/middlewares/errors.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/middlewares/errors.js~errors",
+    "access": "public",
+    "export": true,
+    "importPath": "valid-chess-moves/src/middlewares/errors.js",
+    "importStyle": "errors",
+    "description": "Catches all erros not catched by error-meaning, logs them and return a 500 status.",
+    "lineNumber": 8,
+    "unknown": [
+      {
+        "tagName": "@summary",
+        "tagValue": "Error logging middleware."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "err",
+        "description": "The error."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "req",
+        "description": "The req."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "res",
+        "description": "The res."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 56,
+    "kind": "file",
+    "name": "src/middlewares/index.js",
+    "content": "export errors from './errors';\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/middlewares/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 57,
+    "kind": "file",
+    "name": "src/pieces/index.js",
+    "content": "export knight from './knight';\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/pieces/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 58,
+    "kind": "file",
+    "name": "src/pieces/knight.js",
+    "content": "import Piece from './piece';\n\n/**\n * Class representing a Knight piece.\n * @param {AlgebraicNotation} algebraicPosition - The algebraic position of the Knight.\n * @extends {Piece}\n */\nclass Knight extends Piece {\n  /**\n   * @override\n   */\n  rules = [\n    [+2, +1],\n    [+2, -1],\n    [-2, -1],\n    [-2, +1],\n    [+1, +2],\n    [+1, -2],\n    [-1, -2],\n    [-1, +2],\n  ];\n}\n\nexport default Knight;\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/pieces/knight.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 59,
+    "kind": "class",
+    "name": "Knight",
+    "memberof": "src/pieces/knight.js",
+    "static": true,
+    "longname": "src/pieces/knight.js~Knight",
+    "access": "public",
+    "export": true,
+    "importPath": "valid-chess-moves/src/pieces/knight.js",
     "importStyle": "Knight",
     "description": "Class representing a Knight piece.",
     "lineNumber": 8,
@@ -647,12 +844,12 @@
     ]
   },
   {
-    "__docId__": 53,
+    "__docId__": 60,
     "kind": "member",
     "name": "rules",
-    "memberof": "src/helpers/pieces/knight.js~Knight",
+    "memberof": "src/pieces/knight.js~Knight",
     "static": false,
-    "longname": "src/helpers/pieces/knight.js~Knight#rules",
+    "longname": "src/pieces/knight.js~Knight#rules",
     "access": "public",
     "description": "",
     "lineNumber": 12,
@@ -664,40 +861,40 @@
     }
   },
   {
-    "__docId__": 54,
+    "__docId__": 61,
     "kind": "file",
-    "name": "src/helpers/pieces/piece.js",
-    "content": "import { BadRequestError } from 'meaning-error';\n\n/** Class representing a generic chess piece. */\nclass Piece {\n  /**\n   * Create a Piece in the given position.\n   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.\n   */\n  constructor(algebraicPosition) {\n    /**\n    The algebraic position of the piece.\n    @type AlgebraicNotation\n    */\n    this.algebraicPosition = Piece.validateAlgebraicNotation(algebraicPosition);\n\n    /**\n    The coordinates of the piece.\n    @type Coordinates\n    */\n    this.coordinates = Piece.fromAlgebraic(algebraicPosition);\n  }\n\n  /**\n   * This field defines the overall rules for the movement of a piece,\n   * override it on the specific piece class with the piece rule.\n   * @summary The rules for the piece movement.\n   * @abstract\n   * @type {Coordinates[]}\n   */\n  rules = [];\n\n  /**\n   * Validates if a position is in algebraic notation.\n   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.\n   * @throws {BadRequestError} Throws a BadRequestError if the given algebraicPosition\n   * is invalid.\n   * @returns {AlgebraicNotation} The validated algebraic notation.\n   */\n  static validateAlgebraicNotation(algebraicPosition) {\n    if (typeof algebraicPosition !== 'string'\n          || !algebraicPosition.toLowerCase().match(/^[a-h][1-8]$/)) {\n      throw new BadRequestError(\n        'Invalid algebraic position',\n        [{ field: 'algebraic', message: 'Param `algebraic` is invalid.' }],\n      );\n    }\n\n    return algebraicPosition.toLowerCase();\n  }\n\n  /**\n   * Converts from algebric notation to coordinates.\n   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.\n   * @returns {Coordinates} An array in the form [column, row]\n   */\n  static fromAlgebraic(algebraicPosition) {\n    const [column, row] = algebraicPosition.toLowerCase().split('');\n    return [column.charCodeAt(0) - 96, parseInt(row, 10)];\n  }\n\n  /**\n   * Converts from coordinates to algebric notation.\n   * @param {Coordinates} coordinates -  The coordinates of the piece.\n   * @returns {AlgebraicNotation} The position of the piece in algebraic notation.\n   */\n  static toAlgebraic(coordinates) {\n    return `${String.fromCharCode(96 + coordinates[0])}${parseInt(coordinates[1], 10)}`;\n  }\n\n  /**\n   * Checks if a given position is valid or not.\n   * @param {Coordinates} coordinates - The coordinates of the piece.\n   * @returns {Boolean} Whether or not the given position is legal.\n   */\n  static isLegalPosition(coordinates) {\n    return coordinates.length > 0\n      && Math.max(...coordinates) <= 8\n      && Math.min(...coordinates) >= 1;\n  }\n\n  /**\n   * All the possible (legal) movements of a piece.\n   * @private\n   * @param {Coordinates} startAt - Starting position of piece.\n   * @returns {Coordinates[]} - Every possible coordinates that the piece can reach,\n   * it includes coordinates out of the board.\n   */\n  possiblePositions(startAt) { // eslint-disable-line\n    return this.rules\n      .map(rule => [startAt[0] + rule[0], startAt[1] + rule[1]])\n      .filter(position => this.constructor.isLegalPosition(position));\n  }\n\n  /**\n   * All the possible (legal) movements of a piece after n moves.\n   * @param {Object} movesInfo - Object containing the params.\n   * @param {Coordinates} [movesInfo.startAt=this.coordinates] - Starting position of the\n   * piece. Defaults to the position of the current piece.\n   * @param {Integer} [movesInfo.n=1] - Number of moves, where 0 < n < 20.\n   * @param {Coordinates[]} [movesInfo.positions=[]] - Array of positions. Used for recursion.\n   * @throws {BadRequestError} Throws a BadRequestError if the given n is invalid.\n   * @returns {AlgebraicNotation[]} Every possible coordinates that the piece can reach,\n   * it includes coordinates out of the board.\n   */\n  possiblePositionsInNMoves({ startAt = this.coordinates, n = 1, positions = [] } = {}) {\n    if (!Number.isInteger(n) || n < 0 || n > 20) {\n      throw new BadRequestError(\n        'Invalid argument, moves should be an integer 0 < moves < 20',\n        [{ field: 'moves', message: 'Param `moves` is invalid.' }],\n      );\n    }\n\n    if (n === 0) return positions;\n\n    const currentPossiblePositions = this.possiblePositions(startAt);\n\n    if (n === 1) positions.push(...currentPossiblePositions);\n\n    currentPossiblePositions.forEach((position) => {\n      this.possiblePositionsInNMoves({ startAt: position, n: n - 1, positions });\n    });\n\n    return Array.from(new Set(positions.map(position => Piece.toAlgebraic(position))));\n  }\n}\n\nexport default Piece;\n",
+    "name": "src/pieces/piece.js",
+    "content": "import * as validators from '@/validators';\n\n/** Class representing a generic chess piece. */\nclass Piece {\n  /**\n   * Create a Piece in the given position.\n   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.\n   */\n  constructor(algebraicPosition) {\n    /**\n    The algebraic position of the piece.\n    @type AlgebraicNotation\n    */\n    this.algebraicPosition = Piece.validateAlgebraicNotation(algebraicPosition);\n\n    /**\n    The coordinates of the piece.\n    @type Coordinates\n    */\n    this.coordinates = Piece.fromAlgebraic(algebraicPosition);\n  }\n\n  /**\n   * This field defines the overall rules for the movement of a piece,\n   * override it on the specific piece class with the piece rule.\n   * @summary The rules for the piece movement.\n   * @abstract\n   * @type {Coordinates[]}\n   */\n  rules = [];\n\n  /**\n   * Validates if a position is in algebraic notation.\n   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.\n   * @throws {TypeError} Throws a TypeError if the given algebraicPosition is invalid.\n   * @returns {AlgebraicNotation} The validated algebraic notation.\n   */\n  static validateAlgebraicNotation(algebraicPosition) {\n    if (!validators.algebraicNotation(algebraicPosition)) {\n      throw new TypeError('Invalid algebraic position');\n    }\n    return algebraicPosition.toLowerCase();\n  }\n\n  /**\n   * Converts from algebric notation to coordinates.\n   * @param {AlgebraicNotation} algebraicPosition - The position of the piece in algebraic notation.\n   * @returns {Coordinates} An array in the form [column, row]\n   */\n  static fromAlgebraic(algebraicPosition) {\n    const [column, row] = algebraicPosition.toLowerCase().split('');\n    return [column.charCodeAt(0) - 96, parseInt(row, 10)];\n  }\n\n  /**\n   * Converts from coordinates to algebric notation.\n   * @param {Coordinates} coordinates -  The coordinates of the piece.\n   * @returns {AlgebraicNotation} The position of the piece in algebraic notation.\n   */\n  static toAlgebraic(coordinates) {\n    return `${String.fromCharCode(96 + coordinates[0])}${parseInt(coordinates[1], 10)}`;\n  }\n\n  /**\n   * Checks if a given position is valid or not.\n   * @param {Coordinates} coordinates - The coordinates of the piece.\n   * @returns {Boolean} Whether or not the given position is legal.\n   */\n  static isLegalPosition(coordinates) {\n    return validators.coordinates(coordinates);\n  }\n\n  /**\n   * All the possible (legal) movements of a piece.\n   * @private\n   * @param {Coordinates} startAt - Starting position of piece.\n   * @returns {Coordinates[]} - Every possible coordinates that the piece can reach,\n   * it includes coordinates out of the board.\n   */\n  possiblePositions(startAt) { // eslint-disable-line\n    return this.rules\n      .map(rule => [startAt[0] + rule[0], startAt[1] + rule[1]])\n      .filter(position => this.constructor.isLegalPosition(position));\n  }\n\n  /**\n   * All the possible (legal) movements of a piece after n moves.\n   * @param {Object} movesInfo - Object containing the params.\n   * @param {Coordinates} [movesInfo.startAt=this.coordinates] - Starting position of the\n   * piece. Defaults to the position of the current piece.\n   * @param {Integer} [movesInfo.n=1] - Number of moves, where 0 < n < 20.\n   * @param {Coordinates[]} [movesInfo.positions=[]] - Array of positions. Used for recursion.\n   * @throws {TypeError} Throws a TypeError if the given n is invalid.\n   * @returns {AlgebraicNotation[]} Every possible coordinates that the piece can reach,\n   * it includes coordinates out of the board.\n   */\n  possiblePositionsInNMoves({ startAt = this.coordinates, n = 1, positions = [] } = {}) {\n    if (!validators.moves(n) && n !== 0) {\n      throw new TypeError('Invalid argument, moves should be an integer 0 < moves < 20');\n    }\n\n    if (n === 0) return positions;\n\n    const currentPossiblePositions = this.possiblePositions(startAt);\n\n    if (n === 1) positions.push(...currentPossiblePositions);\n\n    currentPossiblePositions.forEach((position) => {\n      this.possiblePositionsInNMoves({ startAt: position, n: n - 1, positions });\n    });\n\n    return Array.from(new Set(positions.map(position => Piece.toAlgebraic(position))));\n  }\n}\n\nexport default Piece;\n",
     "static": true,
-    "longname": "/home/martini/Projects/valid-chess-moves/src/helpers/pieces/piece.js",
+    "longname": "/home/martini/Projects/valid-chess-moves/src/pieces/piece.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 55,
+    "__docId__": 62,
     "kind": "class",
     "name": "Piece",
-    "memberof": "src/helpers/pieces/piece.js",
+    "memberof": "src/pieces/piece.js",
     "static": true,
-    "longname": "src/helpers/pieces/piece.js~Piece",
+    "longname": "src/pieces/piece.js~Piece",
     "access": "public",
     "export": true,
-    "importPath": "valid-chess-moves/src/helpers/pieces/piece.js",
+    "importPath": "valid-chess-moves/src/pieces/piece.js",
     "importStyle": "Piece",
     "description": "Class representing a generic chess piece.",
     "lineNumber": 4,
     "interface": false
   },
   {
-    "__docId__": 56,
+    "__docId__": 63,
     "kind": "constructor",
     "name": "constructor",
-    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "memberof": "src/pieces/piece.js~Piece",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/helpers/pieces/piece.js~Piece#constructor",
+    "longname": "src/pieces/piece.js~Piece#constructor",
     "access": "public",
     "description": "Create a Piece in the given position.",
     "lineNumber": 9,
@@ -715,12 +912,12 @@
     ]
   },
   {
-    "__docId__": 57,
+    "__docId__": 64,
     "kind": "member",
     "name": "algebraicPosition",
-    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "memberof": "src/pieces/piece.js~Piece",
     "static": false,
-    "longname": "src/helpers/pieces/piece.js~Piece#algebraicPosition",
+    "longname": "src/pieces/piece.js~Piece#algebraicPosition",
     "access": "public",
     "description": "The algebraic position of the piece.",
     "lineNumber": 14,
@@ -734,12 +931,12 @@
     }
   },
   {
-    "__docId__": 58,
+    "__docId__": 65,
     "kind": "member",
     "name": "coordinates",
-    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "memberof": "src/pieces/piece.js~Piece",
     "static": false,
-    "longname": "src/helpers/pieces/piece.js~Piece#coordinates",
+    "longname": "src/pieces/piece.js~Piece#coordinates",
     "access": "public",
     "description": "The coordinates of the piece.",
     "lineNumber": 20,
@@ -753,12 +950,12 @@
     }
   },
   {
-    "__docId__": 59,
+    "__docId__": 66,
     "kind": "member",
     "name": "rules",
-    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "memberof": "src/pieces/piece.js~Piece",
     "static": false,
-    "longname": "src/helpers/pieces/piece.js~Piece#rules",
+    "longname": "src/pieces/piece.js~Piece#rules",
     "access": "public",
     "description": "This field defines the overall rules for the movement of a piece,\noverride it on the specific piece class with the piece rule.",
     "lineNumber": 30,
@@ -779,17 +976,17 @@
     "abstract": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 67,
     "kind": "method",
     "name": "validateAlgebraicNotation",
-    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "memberof": "src/pieces/piece.js~Piece",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/helpers/pieces/piece.js~Piece.validateAlgebraicNotation",
+    "longname": "src/pieces/piece.js~Piece.validateAlgebraicNotation",
     "access": "public",
     "description": "Validates if a position is in algebraic notation.",
-    "lineNumber": 39,
+    "lineNumber": 38,
     "unknown": [
       {
         "tagName": "@returns",
@@ -819,24 +1016,24 @@
     "throws": [
       {
         "types": [
-          "BadRequestError"
+          "TypeError"
         ],
-        "description": "Throws a BadRequestError if the given algebraicPosition\nis invalid."
+        "description": "Throws a TypeError if the given algebraicPosition is invalid."
       }
     ]
   },
   {
-    "__docId__": 61,
+    "__docId__": 68,
     "kind": "method",
     "name": "fromAlgebraic",
-    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "memberof": "src/pieces/piece.js~Piece",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/helpers/pieces/piece.js~Piece.fromAlgebraic",
+    "longname": "src/pieces/piece.js~Piece.fromAlgebraic",
     "access": "public",
     "description": "Converts from algebric notation to coordinates.",
-    "lineNumber": 56,
+    "lineNumber": 50,
     "unknown": [
       {
         "tagName": "@returns",
@@ -865,17 +1062,17 @@
     }
   },
   {
-    "__docId__": 62,
+    "__docId__": 69,
     "kind": "method",
     "name": "toAlgebraic",
-    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "memberof": "src/pieces/piece.js~Piece",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/helpers/pieces/piece.js~Piece.toAlgebraic",
+    "longname": "src/pieces/piece.js~Piece.toAlgebraic",
     "access": "public",
     "description": "Converts from coordinates to algebric notation.",
-    "lineNumber": 66,
+    "lineNumber": 60,
     "unknown": [
       {
         "tagName": "@returns",
@@ -904,17 +1101,17 @@
     }
   },
   {
-    "__docId__": 63,
+    "__docId__": 70,
     "kind": "method",
     "name": "isLegalPosition",
-    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "memberof": "src/pieces/piece.js~Piece",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/helpers/pieces/piece.js~Piece.isLegalPosition",
+    "longname": "src/pieces/piece.js~Piece.isLegalPosition",
     "access": "public",
     "description": "Checks if a given position is valid or not.",
-    "lineNumber": 75,
+    "lineNumber": 69,
     "unknown": [
       {
         "tagName": "@returns",
@@ -943,17 +1140,17 @@
     }
   },
   {
-    "__docId__": 64,
+    "__docId__": 71,
     "kind": "method",
     "name": "possiblePositions",
-    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "memberof": "src/pieces/piece.js~Piece",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/helpers/pieces/piece.js~Piece#possiblePositions",
+    "longname": "src/pieces/piece.js~Piece#possiblePositions",
     "access": "private",
     "description": "All the possible (legal) movements of a piece.",
-    "lineNumber": 88,
+    "lineNumber": 80,
     "unknown": [
       {
         "tagName": "@returns",
@@ -982,17 +1179,17 @@
     }
   },
   {
-    "__docId__": 65,
+    "__docId__": 72,
     "kind": "method",
     "name": "possiblePositionsInNMoves",
-    "memberof": "src/helpers/pieces/piece.js~Piece",
+    "memberof": "src/pieces/piece.js~Piece",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/helpers/pieces/piece.js~Piece#possiblePositionsInNMoves",
+    "longname": "src/pieces/piece.js~Piece#possiblePositionsInNMoves",
     "access": "public",
     "description": "All the possible (legal) movements of a piece after n moves.",
-    "lineNumber": 105,
+    "lineNumber": 97,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1058,30 +1255,30 @@
     "throws": [
       {
         "types": [
-          "BadRequestError"
+          "TypeError"
         ],
-        "description": "Throws a BadRequestError if the given n is invalid."
+        "description": "Throws a TypeError if the given n is invalid."
       }
     ]
   },
   {
-    "__docId__": 66,
+    "__docId__": 73,
     "kind": "file",
-    "name": "src/helpers/pieces/types.jsdoc",
+    "name": "src/pieces/types.jsdoc",
     "content": "/**\n * @typedef Coordinates An array containing the coordinates in the form of [column, row].\n * @type {Array}\n * @property {Number} 0 - The column of the position.\n * @property {Number} 1 - The row of the position.\n */\n\n/**\n * @typedef AlgebraicNotation\n * @property {String} - A string representing a coordinates in algebraic notation.\n*/\n",
     "static": true,
-    "longname": "/home/martini/Projects/valid-chess-moves/src/helpers/pieces/types.jsdoc",
+    "longname": "/home/martini/Projects/valid-chess-moves/src/pieces/types.jsdoc",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 67,
+    "__docId__": 74,
     "kind": "typedef",
     "name": "Coordinates",
-    "memberof": "src/helpers/pieces/types.jsdoc",
+    "memberof": "src/pieces/types.jsdoc",
     "static": true,
-    "longname": "src/helpers/pieces/types.jsdoc~Coordinates",
+    "longname": "src/pieces/types.jsdoc~Coordinates",
     "access": "public",
     "description": "",
     "properties": [
@@ -1115,12 +1312,12 @@
     }
   },
   {
-    "__docId__": 68,
+    "__docId__": 75,
     "kind": "typedef",
     "name": "AlgebraicNotation",
-    "memberof": "src/helpers/pieces/types.jsdoc",
+    "memberof": "src/pieces/types.jsdoc",
     "static": true,
-    "longname": "src/helpers/pieces/types.jsdoc~AlgebraicNotation",
+    "longname": "src/pieces/types.jsdoc~AlgebraicNotation",
     "access": "public",
     "description": "",
     "properties": [
@@ -1144,19 +1341,321 @@
     }
   },
   {
-    "__docId__": 69,
+    "__docId__": 76,
     "kind": "file",
-    "name": "src/index.js",
-    "content": "import app from './app';\nimport config from './config';\n\n/* eslint no-console:0 */\napp.listen(config.http.port, () => console.log(`Listening on ${config.http.port}`));\n",
+    "name": "src/presenters/index.js",
+    "content": "export positions from './positions';\n",
     "static": true,
-    "longname": "/home/martini/Projects/valid-chess-moves/src/index.js",
+    "longname": "/home/martini/Projects/valid-chess-moves/src/presenters/index.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
+    "__docId__": 77,
+    "kind": "file",
+    "name": "src/presenters/positions.js",
+    "content": "/**\n * Presents the response for the /positions/:piece/:startAt.\n * @param {Object} req - The request object.\n * @param {Object} req.params - The params object.\n * @param {String} req.params.piece - The type of the piece. eg: knight.\n * @param {Object} req.query - The query object.\n * @param {Number} [req.query.moves] - The number of moves to calculate.\n * @param {AlgebraicNotation[]} positions - All the positions that the piece can take in\n * the given moves.\n */\nexport default (req, positions) => ({\n  positions,\n  piece: req.params.piece,\n  moves: Number.parseInt(req.query.moves, 10) || 2,\n});\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/presenters/positions.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 78,
+    "kind": "function",
+    "name": "positions",
+    "memberof": "src/presenters/positions.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/presenters/positions.js~positions",
+    "access": "public",
+    "export": true,
+    "importPath": "valid-chess-moves/src/presenters/positions.js",
+    "importStyle": "positions",
+    "description": "Presents the response for the /positions/:piece/:startAt.",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "req",
+        "description": "The request object."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "req.params",
+        "description": "The params object."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "req.params.piece",
+        "description": "The type of the piece. eg: knight."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "req.query",
+        "description": "The query object."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "req.query.moves",
+        "description": "The number of moves to calculate."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "AlgebraicNotation[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "positions",
+        "description": "All the positions that the piece can take in\nthe given moves."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 79,
+    "kind": "file",
+    "name": "src/routes/index.js",
+    "content": "export positions from './positions';\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/routes/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 80,
+    "kind": "file",
+    "name": "src/routes/positions.js",
+    "content": "import { Router } from 'express';\n\nimport positions from '@/controllers/positions';\n\nconst router = Router();\nrouter.get('/:piece/:startAt', positions);\n\nexport default router;\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/routes/positions.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 81,
+    "kind": "variable",
+    "name": "router",
+    "memberof": "src/routes/positions.js",
+    "static": true,
+    "longname": "src/routes/positions.js~router",
+    "access": "public",
+    "export": true,
+    "importPath": "valid-chess-moves/src/routes/positions.js",
+    "importStyle": "router",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "file",
+    "name": "src/validators/algebraic-notation.js",
+    "content": "/**\n * Algebraic notation validator.\n * @param {AlgebraicNotation} algebraicPosition\n * @returns {Boolean} Whether or not the position is valid.\n */\nexport default (algebraicPosition) => {\n  if (typeof algebraicPosition !== 'string'\n    || !algebraicPosition.toLowerCase().match(/^[a-h][1-8]$/)) {\n    return false;\n  }\n  return true;\n};\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/validators/algebraic-notation.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 83,
+    "kind": "function",
+    "name": "algebraicnotation",
+    "memberof": "src/validators/algebraic-notation.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/validators/algebraic-notation.js~algebraicnotation",
+    "access": "public",
+    "export": true,
+    "importPath": "valid-chess-moves/src/validators/algebraic-notation.js",
+    "importStyle": "algebraicnotation",
+    "description": "Algebraic notation validator.",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Boolean} Whether or not the position is valid."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "AlgebraicNotation"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "algebraicPosition",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "Whether or not the position is valid."
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "file",
+    "name": "src/validators/coordinates.js",
+    "content": "/**\n * Coordinates validator.\n * @param {Coordinates} coordinates\n * @returns {Boolean} Whether or not the position is valid.\n */\nexport default coordinates => coordinates.length === 2\n  && Math.max(...coordinates) <= 8\n  && Math.min(...coordinates) >= 1;\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/validators/coordinates.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 85,
+    "kind": "function",
+    "name": "coordinates",
+    "memberof": "src/validators/coordinates.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/validators/coordinates.js~coordinates",
+    "access": "public",
+    "export": true,
+    "importPath": "valid-chess-moves/src/validators/coordinates.js",
+    "importStyle": "coordinates",
+    "description": "Coordinates validator.",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Boolean} Whether or not the position is valid."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Coordinates"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "coordinates",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "Whether or not the position is valid."
+    }
+  },
+  {
+    "__docId__": 86,
+    "kind": "file",
+    "name": "src/validators/index.js",
+    "content": "export algebraicNotation from './algebraic-notation';\nexport coordinates from './coordinates';\nexport moves from './moves';\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/validators/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 87,
+    "kind": "file",
+    "name": "src/validators/moves.js",
+    "content": "/**\n * Moves validator.\n * @param {Number} moves\n * @returns {Boolean} Whether or not the number of moves is valid.\n */\nexport default moves => Number.isInteger(moves) && moves > 0 && moves < 20;\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/src/validators/moves.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 88,
+    "kind": "function",
+    "name": "moves",
+    "memberof": "src/validators/moves.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/validators/moves.js~moves",
+    "access": "public",
+    "export": true,
+    "importPath": "valid-chess-moves/src/validators/moves.js",
+    "importStyle": "moves",
+    "description": "Moves validator.",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Boolean} Whether or not the number of moves is valid."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "moves",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "Whether or not the number of moves is valid."
+    }
+  },
+  {
     "kind": "index",
-    "content": "# Valid chess moves\n\n[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)\n[![Coverage Status](https://coveralls.io/repos/github/martini97/valid-chess-moves/badge.svg?branch=master)](https://coveralls.io/github/martini97/valid-chess-moves?branch=master)\n[![Build Status](https://travis-ci.org/martini97/valid-chess-moves.svg?branch=master)](https://travis-ci.org/martini97/valid-chess-moves)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](/CONTRIBUTING.md)\n\n## Running loccaly\n```bash\n$ git clone https://github.com/martini97/valid-chess-moves.git\n$ cd valid-chess-moves\n$ yarn\n$ yarn start\n```\n\n## Documentation\nThis project is currently using jsdoc for documentation, you can check it [here](https://martini97.github.io/valid-chess-moves/).\n",
+    "content": "# Valid chess moves\n\n[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)\n[![Build Status](https://travis-ci.org/martini97/valid-chess-moves.svg?branch=master)](https://travis-ci.org/martini97/valid-chess-moves)\n[![Coverage Status](https://coveralls.io/repos/github/martini97/valid-chess-moves/badge.svg?branch=master)](https://coveralls.io/github/martini97/valid-chess-moves?branch=master)\n[![Docs Coverage Status](/docs/badge.svg)](https://martini97.github.io/valid-chess-moves/)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](/CONTRIBUTING.md)\n\n## Running loccaly\n```bash\n$ git clone https://github.com/martini97/valid-chess-moves.git\n$ cd valid-chess-moves\n$ yarn\n$ yarn start\n```\n\n## Documentation\nThis project is currently using jsdoc for documentation, you can check it [here](https://martini97.github.io/valid-chess-moves/).\n",
     "longname": "/home/martini/Projects/valid-chess-moves/README.md",
     "name": "./README.md",
     "static": true,
@@ -1171,25 +1670,156 @@
     "access": "public"
   },
   {
-    "__docId__": 70,
+    "__docId__": 89,
     "kind": "testFile",
-    "name": "tests/helpers/pieces/knight.test.js",
-    "content": "import Knight from '@/helpers/pieces/knight';\nimport allKinghtsPositions from '../../fixtures/pieces/knight/1-moves.json';\nimport allKinghtsPositionsIn2Moves from '../../fixtures/pieces/knight/2-moves.json';\n\n/**\n * @test {Knight}\n */\ndescribe('Given a Knight', () => {\n  function testPossiblePositions(startAt, validPositions) {\n    /**\n     * @test {Knight#possiblePositionsInNMoves}\n     */\n    it('should return all valid positions', () => {\n      const knight = new Knight(startAt);\n      const possiblePositions = knight.possiblePositionsInNMoves();\n      expect(possiblePositions.length).toEqual(validPositions.length);\n      possiblePositions.forEach((position) => {\n        expect(validPositions).toContain(position);\n      });\n    });\n  }\n\n  function testPossiblePositionsInNMoves(startAt, validPositions) {\n    /**\n     * @test {Knight#possiblePositionsInNMoves}\n     */\n    it('should return all valid positions for it in 2 moves', () => {\n      validPositions = Array.from(new Set(validPositions)); // eslint-disable-line\n      const knight = new Knight(startAt);\n      const possiblePositions = knight.possiblePositionsInNMoves({ n: 2 });\n      expect(possiblePositions.length).toEqual(validPositions.length);\n      possiblePositions.forEach((position) => {\n        expect(validPositions).toContain(position);\n      });\n    });\n  }\n\n  Object.entries(allKinghtsPositions)\n    .forEach(entry => testPossiblePositions(...entry));\n  Object.entries(allKinghtsPositionsIn2Moves)\n    .forEach(entry => testPossiblePositionsInNMoves(2, ...entry));\n});\n",
+    "name": "tests/app.test.js",
+    "content": "import request from 'supertest';\nimport app from '@/app';\n\n/**\n * @test {app}\n */\ndescribe('Given the app', () => {\n  describe('When getting a not implemented piece', () => {\n    it('should return an error', async () => {\n      const { body } = await request(app)\n        .get('/positions/king/a1')\n        .expect(400);\n      expect(body).toHaveProperty('error_name', 'BadRequestError');\n      expect(body).toHaveProperty('error_message', 'Invalid piece. Valid pieces: knight.');\n      expect(body).toHaveProperty('status_code', 400);\n      expect(body).toHaveProperty('error');\n      expect(body.error).toHaveLength(1);\n      expect(body.error[0]).toHaveProperty('field', 'piece');\n      expect(body.error[0]).toHaveProperty('message', 'piece is invalid');\n    });\n  });\n\n  describe('When getting a implemented piece', () => {\n    it('should return possible positions', async () => {\n      const { body } = await request(app)\n        .get('/positions/knight/a1')\n        .expect(200);\n      expect(body).toHaveProperty('piece', 'knight');\n      expect(body).toHaveProperty('moves', 2);\n      expect(body).toHaveProperty('positions', [\n        'e3', 'e1', 'a1', 'a3', 'd4', 'b4', 'd2', 'c5', 'c1', 'a5',\n      ]);\n    });\n\n    it('should allow query for n of moves', async () => {\n      const { body } = await request(app)\n        .get('/positions/knight/a1?moves=5')\n        .expect(200);\n      expect(body).toHaveProperty('piece', 'knight');\n      expect(body).toHaveProperty('moves', 5);\n      expect(body).toHaveProperty('positions', [\n        'g4', 'g2', 'c2', 'c4', 'f5', 'f1', 'd1', 'd5',\n        'g6', 'c6', 'f7', 'f3', 'd3', 'd7', 'g8', 'h3',\n        'h1', 'e4', 'h7', 'h5', 'e8', 'e2', 'e6', 'b3',\n        'b5', 'b1', 'a2', 'a6', 'b7', 'c8', 'a4', 'a8',\n      ]);\n    });\n\n    it('should throw an error for invalid position', async () => {\n      const { body } = await request(app)\n        .get('/positions/knight/1a')\n        .expect(400);\n      expect(body).toHaveProperty('error_name', 'BadRequestError');\n      expect(body).toHaveProperty('error_message', 'Invalid algebraic position.');\n      expect(body).toHaveProperty('status_code', 400);\n      expect(body).toHaveProperty('error');\n      expect(body.error).toHaveLength(1);\n      expect(body.error[0]).toHaveProperty('field', 'startAt');\n      expect(body.error[0]).toHaveProperty('message', 'startAt is invalid');\n    });\n\n    it('should throw an error for negative moves', async () => {\n      const { body } = await request(app)\n        .get('/positions/knight/a1?moves=-1')\n        .expect(400);\n      expect(body).toHaveProperty('error_name', 'BadRequestError');\n      expect(body).toHaveProperty('error_message', 'Invalid number of moves.');\n      expect(body).toHaveProperty('status_code', 400);\n      expect(body).toHaveProperty('error');\n      expect(body.error).toHaveLength(1);\n      expect(body.error[0]).toHaveProperty('field', 'moves');\n      expect(body.error[0]).toHaveProperty('message', 'moves is invalid');\n    });\n\n    it('should throw an error for big moves', async () => {\n      const { body } = await request(app)\n        .get('/positions/knight/a1?moves=21')\n        .expect(400);\n      expect(body).toHaveProperty('error_name', 'BadRequestError');\n      expect(body).toHaveProperty('error_message', 'Invalid number of moves.');\n      expect(body).toHaveProperty('status_code', 400);\n      expect(body).toHaveProperty('error');\n      expect(body.error).toHaveLength(1);\n      expect(body.error[0]).toHaveProperty('field', 'moves');\n      expect(body.error[0]).toHaveProperty('message', 'moves is invalid');\n    });\n  });\n});\n",
     "static": true,
-    "longname": "/home/martini/Projects/valid-chess-moves/tests/helpers/pieces/knight.test.js",
+    "longname": "/home/martini/Projects/valid-chess-moves/tests/app.test.js",
     "access": null,
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 71,
+    "__docId__": 90,
     "kind": "test",
     "name": "describe0",
     "testId": 0,
-    "memberof": "tests/helpers/pieces/knight.test.js",
+    "memberof": "tests/app.test.js",
     "testDepth": 0,
     "static": true,
-    "longname": "tests/helpers/pieces/knight.test.js~describe0",
+    "longname": "tests/app.test.js~describe0",
+    "access": null,
+    "description": "Given the app",
+    "lineNumber": 7,
+    "testTargets": [
+      "app"
+    ]
+  },
+  {
+    "__docId__": 91,
+    "kind": "test",
+    "name": "describe1",
+    "testId": 1,
+    "memberof": "tests/app.test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/app.test.js~describe0.describe1",
+    "access": null,
+    "description": "When getting a not implemented piece",
+    "lineNumber": 8
+  },
+  {
+    "__docId__": 92,
+    "kind": "test",
+    "name": "it2",
+    "testId": 2,
+    "memberof": "tests/app.test.js~describe0.describe1",
+    "testDepth": 2,
+    "static": true,
+    "longname": "tests/app.test.js~describe0.describe1.it2",
+    "access": null,
+    "description": "should return an error",
+    "lineNumber": 9
+  },
+  {
+    "__docId__": 93,
+    "kind": "test",
+    "name": "describe3",
+    "testId": 3,
+    "memberof": "tests/app.test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "tests/app.test.js~describe0.describe3",
+    "access": null,
+    "description": "When getting a implemented piece",
+    "lineNumber": 23
+  },
+  {
+    "__docId__": 94,
+    "kind": "test",
+    "name": "it4",
+    "testId": 4,
+    "memberof": "tests/app.test.js~describe0.describe3",
+    "testDepth": 2,
+    "static": true,
+    "longname": "tests/app.test.js~describe0.describe3.it4",
+    "access": null,
+    "description": "should return possible positions",
+    "lineNumber": 24
+  },
+  {
+    "__docId__": 95,
+    "kind": "test",
+    "name": "it5",
+    "testId": 5,
+    "memberof": "tests/app.test.js~describe0.describe3",
+    "testDepth": 2,
+    "static": true,
+    "longname": "tests/app.test.js~describe0.describe3.it5",
+    "access": null,
+    "description": "should allow query for n of moves",
+    "lineNumber": 35
+  },
+  {
+    "__docId__": 96,
+    "kind": "test",
+    "name": "it6",
+    "testId": 6,
+    "memberof": "tests/app.test.js~describe0.describe3",
+    "testDepth": 2,
+    "static": true,
+    "longname": "tests/app.test.js~describe0.describe3.it6",
+    "access": null,
+    "description": "should throw an error for invalid position",
+    "lineNumber": 49
+  },
+  {
+    "__docId__": 97,
+    "kind": "test",
+    "name": "it7",
+    "testId": 7,
+    "memberof": "tests/app.test.js~describe0.describe3",
+    "testDepth": 2,
+    "static": true,
+    "longname": "tests/app.test.js~describe0.describe3.it7",
+    "access": null,
+    "description": "should throw an error for negative moves",
+    "lineNumber": 62
+  },
+  {
+    "__docId__": 98,
+    "kind": "test",
+    "name": "it8",
+    "testId": 8,
+    "memberof": "tests/app.test.js~describe0.describe3",
+    "testDepth": 2,
+    "static": true,
+    "longname": "tests/app.test.js~describe0.describe3.it8",
+    "access": null,
+    "description": "should throw an error for big moves",
+    "lineNumber": 75
+  },
+  {
+    "__docId__": 99,
+    "kind": "testFile",
+    "name": "tests/pieces/knight.test.js",
+    "content": "import Knight from '@/pieces/knight';\nimport allKinghtsPositions from '../fixtures/pieces/knight/1-moves.json';\nimport allKinghtsPositionsIn2Moves from '../fixtures/pieces/knight/2-moves.json';\n\n/**\n * @test {Knight}\n */\ndescribe('Given a Knight', () => {\n  function testPossiblePositions(startAt, validPositions) {\n    /**\n     * @test {Knight#possiblePositionsInNMoves}\n     */\n    it('should return all valid positions', () => {\n      const knight = new Knight(startAt);\n      const possiblePositions = knight.possiblePositionsInNMoves();\n      expect(possiblePositions.length).toEqual(validPositions.length);\n      possiblePositions.forEach((position) => {\n        expect(validPositions).toContain(position);\n      });\n    });\n  }\n\n  function testPossiblePositionsIn2Moves(startAt, validPositions) {\n    /**\n     * @test {Knight#possiblePositionsInNMoves}\n     */\n    it('should return all valid positions for it in 2 moves', () => {\n      validPositions = Array.from(new Set(validPositions)); // eslint-disable-line\n      const knight = new Knight(startAt);\n      const possiblePositions = knight.possiblePositionsInNMoves({ n: 2 });\n      expect(possiblePositions.length).toEqual(validPositions.length);\n      possiblePositions.forEach((position) => {\n        expect(validPositions).toContain(position);\n      });\n    });\n  }\n\n  Object.entries(allKinghtsPositions)\n    .forEach(entry => testPossiblePositions(...entry));\n  Object.entries(allKinghtsPositionsIn2Moves)\n    .forEach(entry => testPossiblePositionsIn2Moves(...entry));\n});\n",
+    "static": true,
+    "longname": "/home/martini/Projects/valid-chess-moves/tests/pieces/knight.test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 100,
+    "kind": "test",
+    "name": "describe9",
+    "testId": 9,
+    "memberof": "tests/pieces/knight.test.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "tests/pieces/knight.test.js~describe9",
     "access": null,
     "description": "Given a Knight",
     "lineNumber": 8,
@@ -1198,14 +1828,14 @@
     ]
   },
   {
-    "__docId__": 72,
+    "__docId__": 101,
     "kind": "test",
-    "name": "it1",
-    "testId": 1,
-    "memberof": "tests/helpers/pieces/knight.test.js~describe0",
+    "name": "it10",
+    "testId": 10,
+    "memberof": "tests/pieces/knight.test.js~describe9",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/helpers/pieces/knight.test.js~describe0.it1",
+    "longname": "tests/pieces/knight.test.js~describe9.it10",
     "access": null,
     "description": "should return all valid positions",
     "lineNumber": 13,
@@ -1214,14 +1844,14 @@
     ]
   },
   {
-    "__docId__": 73,
+    "__docId__": 102,
     "kind": "test",
-    "name": "it2",
-    "testId": 2,
-    "memberof": "tests/helpers/pieces/knight.test.js~describe0",
+    "name": "it11",
+    "testId": 11,
+    "memberof": "tests/pieces/knight.test.js~describe9",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/helpers/pieces/knight.test.js~describe0.it2",
+    "longname": "tests/pieces/knight.test.js~describe9.it11",
     "access": null,
     "description": "should return all valid positions for it in 2 moves",
     "lineNumber": 27,
@@ -1230,25 +1860,25 @@
     ]
   },
   {
-    "__docId__": 74,
+    "__docId__": 103,
     "kind": "testFile",
-    "name": "tests/helpers/pieces/piece.test.js",
-    "content": "import Piece from '@/helpers/pieces/piece';\nimport allPositions from '../../fixtures/pieces/all-positions.json';\n\n/**\n * @test {Piece}\n */\ndescribe('Given a Piece', () => {\n  /**\n   * @test {Piece#rules}\n   */\n  it('should have no rules', () => {\n    const piece = new Piece('A1');\n    expect(piece.rules.length).toEqual(0);\n  });\n\n  /**\n   * @test {Piece#possiblePositions}\n   */\n  it('should not be able to move', () => {\n    const piece = new Piece('A1');\n    expect(piece.possiblePositions().length).toEqual(0);\n  });\n\n  /**\n   * @test {Piece#possiblePositionsInNMoves}\n   */\n  it('next N moves should always return [] for N > 0', () => {\n    const piece = new Piece('A1');\n    [...Array(20)].map((_, n) => expect(piece.possiblePositionsInNMoves({ n }).length)\n      .toEqual(0));\n  });\n\n  describe('next N moves should throw an error for invalid N', () => {\n    function shouldThrowAnError(piece, n) {\n      /**\n       * @test {Piece#possiblePositionsInNMoves}\n       */\n      it(`N = ${n}`, () => {\n        expect(() => piece.possiblePositionsInNMoves({ n }))\n          .toThrowError('Invalid argument, moves should be an integer 0 < moves < 20');\n      });\n    }\n\n    const piece = new Piece('A1');\n    shouldThrowAnError(piece, -1);\n    shouldThrowAnError(piece, 2.5);\n    shouldThrowAnError(piece, 21);\n    shouldThrowAnError(piece, Math.PI);\n    shouldThrowAnError(piece, -Math.PI);\n    shouldThrowAnError(piece, Infinity);\n    shouldThrowAnError(piece, -Infinity);\n  });\n  describe('initiated with an invalid algebraic position', () => {\n    function shouldThrowAnError(algebraic) {\n      /**\n       * @test {Piece.validateAlgebraicNotation}\n       */\n      it(`should throw an error [${algebraic}]`, () => {\n        expect(() => new Piece(algebraic)).toThrowError('Invalid algebraic position');\n      });\n    }\n\n    shouldThrowAnError('8h');\n    shouldThrowAnError([1, 1]);\n    shouldThrowAnError('invalid algebraic position');\n    shouldThrowAnError('i1');\n    shouldThrowAnError('h9');\n    shouldThrowAnError(8);\n    shouldThrowAnError({ column: 'A', row: 8 });\n  });\n\n  describe('initiated with a valid algebraic position', () => {\n    function shouldSetCorrectCoordinates(algebraic, expected) {\n      /**\n       * @test {Piece#coordinates}\n       * @test {Piece#algebraicPosition}\n       */\n      it(`should set correct coordinates [${algebraic} => ${expected}]`, () => {\n        const piece = new Piece(algebraic);\n        expect(piece.coordinates).toEqual(expected);\n        expect(piece.algebraicPosition).toEqual(algebraic.toLowerCase());\n      });\n    }\n\n    function shouldGetCorrectAlgebraic(expected, coordinates) {\n      /**\n       * @test {Piece.toAlgebraic}\n       */\n      it(`should get correct algebraic [${coordinates} => ${expected}]`, () => {\n        expect(Piece.toAlgebraic(coordinates))\n          .toEqual(expected.toLowerCase());\n      });\n    }\n\n    allPositions.forEach(testData => shouldSetCorrectCoordinates(...testData));\n    allPositions.forEach(testData => shouldGetCorrectAlgebraic(...testData));\n  });\n\n  describe('testing for legal positions', () => {\n    function shouldValidateLegalPosition(pos, expected) {\n      /**\n       * @test {Piece.isLegalPosition}\n       */\n      it(`should consider ${pos} ${expected ? 'legal' : 'ilegal'}`, () => {\n        expect(Piece.isLegalPosition(pos)).toEqual(expected);\n      });\n    }\n    const legalMoves = [];\n    for (let i = 1; i <= 8; i++) {\n      for (let j = 1; j <= 8; j++) {\n        legalMoves.push([i, j]);\n      }\n    }\n\n    legalMoves.forEach(pos => shouldValidateLegalPosition(pos, true));\n    shouldValidateLegalPosition([-1, 2], false);\n    shouldValidateLegalPosition([1, -2], false);\n    shouldValidateLegalPosition([10, 2], false);\n    shouldValidateLegalPosition([1, 20], false);\n    shouldValidateLegalPosition([-1, 20], false);\n    shouldValidateLegalPosition([-10, -2], false);\n    shouldValidateLegalPosition('wrong parameter', false);\n    shouldValidateLegalPosition({}, false);\n    shouldValidateLegalPosition(2, false);\n  });\n});\n",
+    "name": "tests/pieces/piece.test.js",
+    "content": "import Piece from '@/pieces/piece';\nimport allPositions from '../fixtures/pieces/all-positions.json';\n\n/**\n * @test {Piece}\n */\ndescribe('Given a Piece', () => {\n  /**\n   * @test {Piece#rules}\n   */\n  it('should have no rules', () => {\n    const piece = new Piece('A1');\n    expect(piece.rules.length).toEqual(0);\n  });\n\n  /**\n   * @test {Piece#possiblePositions}\n   */\n  it('should not be able to move', () => {\n    const piece = new Piece('A1');\n    expect(piece.possiblePositions().length).toEqual(0);\n  });\n\n  /**\n   * @test {Piece#possiblePositionsInNMoves}\n   */\n  it('next N moves should always return [] for N > 0', () => {\n    const piece = new Piece('A1');\n    [...Array(19)].map((_, n) => expect(piece.possiblePositionsInNMoves({ n: n + 1 }).length)\n      .toEqual(0));\n  });\n\n  describe('next N moves should throw an error for invalid N', () => {\n    function shouldThrowAnError(piece, n) {\n      /**\n       * @test {Piece#possiblePositionsInNMoves}\n       */\n      it(`N = ${n}`, () => {\n        expect(() => piece.possiblePositionsInNMoves({ n }))\n          .toThrowError(TypeError);\n      });\n    }\n\n    const piece = new Piece('A1');\n    shouldThrowAnError(piece, -1);\n    shouldThrowAnError(piece, 2.5);\n    shouldThrowAnError(piece, 21);\n    shouldThrowAnError(piece, Math.PI);\n    shouldThrowAnError(piece, -Math.PI);\n    shouldThrowAnError(piece, Infinity);\n    shouldThrowAnError(piece, -Infinity);\n  });\n  describe('initiated with an invalid algebraic position', () => {\n    function shouldThrowAnError(algebraic) {\n      /**\n       * @test {Piece.validateAlgebraicNotation}\n       */\n      it(`should throw an error [${algebraic}]`, () => {\n        expect(() => new Piece(algebraic)).toThrowError(TypeError);\n      });\n    }\n\n    shouldThrowAnError('8h');\n    shouldThrowAnError([1, 1]);\n    shouldThrowAnError('invalid algebraic position');\n    shouldThrowAnError('i1');\n    shouldThrowAnError('h9');\n    shouldThrowAnError(8);\n    shouldThrowAnError({ column: 'A', row: 8 });\n  });\n\n  describe('initiated with a valid algebraic position', () => {\n    function shouldSetCorrectCoordinates(algebraic, expected) {\n      /**\n       * @test {Piece#coordinates}\n       * @test {Piece#algebraicPosition}\n       */\n      it(`should set correct coordinates [${algebraic} => ${expected}]`, () => {\n        const piece = new Piece(algebraic);\n        expect(piece.coordinates).toEqual(expected);\n        expect(piece.algebraicPosition).toEqual(algebraic.toLowerCase());\n      });\n    }\n\n    function shouldGetCorrectAlgebraic(expected, coordinates) {\n      /**\n       * @test {Piece.toAlgebraic}\n       */\n      it(`should get correct algebraic [${coordinates} => ${expected}]`, () => {\n        expect(Piece.toAlgebraic(coordinates))\n          .toEqual(expected.toLowerCase());\n      });\n    }\n\n    allPositions.forEach(testData => shouldSetCorrectCoordinates(...testData));\n    allPositions.forEach(testData => shouldGetCorrectAlgebraic(...testData));\n  });\n\n  describe('testing for legal positions', () => {\n    function shouldValidateLegalPosition(pos, expected) {\n      /**\n       * @test {Piece.isLegalPosition}\n       */\n      it(`should consider ${pos} ${expected ? 'legal' : 'ilegal'}`, () => {\n        expect(Piece.isLegalPosition(pos)).toEqual(expected);\n      });\n    }\n    const legalMoves = [];\n    for (let i = 1; i <= 8; i++) {\n      for (let j = 1; j <= 8; j++) {\n        legalMoves.push([i, j]);\n      }\n    }\n\n    legalMoves.forEach(pos => shouldValidateLegalPosition(pos, true));\n    shouldValidateLegalPosition([-1, 2], false);\n    shouldValidateLegalPosition([1, -2], false);\n    shouldValidateLegalPosition([10, 2], false);\n    shouldValidateLegalPosition([1, 20], false);\n    shouldValidateLegalPosition([-1, 20], false);\n    shouldValidateLegalPosition([-10, -2], false);\n    shouldValidateLegalPosition('wrong parameter', false);\n    shouldValidateLegalPosition({}, false);\n    shouldValidateLegalPosition(2, false);\n  });\n});\n",
     "static": true,
-    "longname": "/home/martini/Projects/valid-chess-moves/tests/helpers/pieces/piece.test.js",
+    "longname": "/home/martini/Projects/valid-chess-moves/tests/pieces/piece.test.js",
     "access": null,
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 75,
+    "__docId__": 104,
     "kind": "test",
-    "name": "describe3",
-    "testId": 3,
-    "memberof": "tests/helpers/pieces/piece.test.js",
+    "name": "describe12",
+    "testId": 12,
+    "memberof": "tests/pieces/piece.test.js",
     "testDepth": 0,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3",
+    "longname": "tests/pieces/piece.test.js~describe12",
     "access": null,
     "description": "Given a Piece",
     "lineNumber": 7,
@@ -1257,14 +1887,14 @@
     ]
   },
   {
-    "__docId__": 76,
+    "__docId__": 105,
     "kind": "test",
-    "name": "it4",
-    "testId": 4,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "name": "it13",
+    "testId": 13,
+    "memberof": "tests/pieces/piece.test.js~describe12",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.it4",
+    "longname": "tests/pieces/piece.test.js~describe12.it13",
     "access": null,
     "description": "should have no rules",
     "lineNumber": 11,
@@ -1273,14 +1903,14 @@
     ]
   },
   {
-    "__docId__": 77,
+    "__docId__": 106,
     "kind": "test",
-    "name": "it5",
-    "testId": 5,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "name": "it14",
+    "testId": 14,
+    "memberof": "tests/pieces/piece.test.js~describe12",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.it5",
+    "longname": "tests/pieces/piece.test.js~describe12.it14",
     "access": null,
     "description": "should not be able to move",
     "lineNumber": 19,
@@ -1289,14 +1919,14 @@
     ]
   },
   {
-    "__docId__": 78,
+    "__docId__": 107,
     "kind": "test",
-    "name": "it6",
-    "testId": 6,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "name": "it15",
+    "testId": 15,
+    "memberof": "tests/pieces/piece.test.js~describe12",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.it6",
+    "longname": "tests/pieces/piece.test.js~describe12.it15",
     "access": null,
     "description": "next N moves should always return [] for N > 0",
     "lineNumber": 27,
@@ -1305,27 +1935,27 @@
     ]
   },
   {
-    "__docId__": 79,
+    "__docId__": 108,
     "kind": "test",
-    "name": "describe7",
-    "testId": 7,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "name": "describe16",
+    "testId": 16,
+    "memberof": "tests/pieces/piece.test.js~describe12",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe7",
+    "longname": "tests/pieces/piece.test.js~describe12.describe16",
     "access": null,
     "description": "next N moves should throw an error for invalid N",
     "lineNumber": 33
   },
   {
-    "__docId__": 80,
+    "__docId__": 109,
     "kind": "test",
-    "name": "it8",
-    "testId": 8,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3.describe7",
+    "name": "it17",
+    "testId": 17,
+    "memberof": "tests/pieces/piece.test.js~describe12.describe16",
     "testDepth": 2,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe7.it8",
+    "longname": "tests/pieces/piece.test.js~describe12.describe16.it17",
     "access": null,
     "lineNumber": 38,
     "testTargets": [
@@ -1333,27 +1963,27 @@
     ]
   },
   {
-    "__docId__": 81,
+    "__docId__": 110,
     "kind": "test",
-    "name": "describe9",
-    "testId": 9,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "name": "describe18",
+    "testId": 18,
+    "memberof": "tests/pieces/piece.test.js~describe12",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe9",
+    "longname": "tests/pieces/piece.test.js~describe12.describe18",
     "access": null,
     "description": "initiated with an invalid algebraic position",
     "lineNumber": 53
   },
   {
-    "__docId__": 82,
+    "__docId__": 111,
     "kind": "test",
-    "name": "it10",
-    "testId": 10,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3.describe9",
+    "name": "it19",
+    "testId": 19,
+    "memberof": "tests/pieces/piece.test.js~describe12.describe18",
     "testDepth": 2,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe9.it10",
+    "longname": "tests/pieces/piece.test.js~describe12.describe18.it19",
     "access": null,
     "lineNumber": 58,
     "testTargets": [
@@ -1361,27 +1991,27 @@
     ]
   },
   {
-    "__docId__": 83,
+    "__docId__": 112,
     "kind": "test",
-    "name": "describe11",
-    "testId": 11,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "name": "describe20",
+    "testId": 20,
+    "memberof": "tests/pieces/piece.test.js~describe12",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe11",
+    "longname": "tests/pieces/piece.test.js~describe12.describe20",
     "access": null,
     "description": "initiated with a valid algebraic position",
     "lineNumber": 72
   },
   {
-    "__docId__": 84,
+    "__docId__": 113,
     "kind": "test",
-    "name": "it12",
-    "testId": 12,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3.describe11",
+    "name": "it21",
+    "testId": 21,
+    "memberof": "tests/pieces/piece.test.js~describe12.describe20",
     "testDepth": 2,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe11.it12",
+    "longname": "tests/pieces/piece.test.js~describe12.describe20.it21",
     "access": null,
     "lineNumber": 78,
     "testTargets": [
@@ -1390,14 +2020,14 @@
     ]
   },
   {
-    "__docId__": 85,
+    "__docId__": 114,
     "kind": "test",
-    "name": "it13",
-    "testId": 13,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3.describe11",
+    "name": "it22",
+    "testId": 22,
+    "memberof": "tests/pieces/piece.test.js~describe12.describe20",
     "testDepth": 2,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe11.it13",
+    "longname": "tests/pieces/piece.test.js~describe12.describe20.it22",
     "access": null,
     "lineNumber": 89,
     "testTargets": [
@@ -1405,27 +2035,27 @@
     ]
   },
   {
-    "__docId__": 86,
+    "__docId__": 115,
     "kind": "test",
-    "name": "describe14",
-    "testId": 14,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3",
+    "name": "describe23",
+    "testId": 23,
+    "memberof": "tests/pieces/piece.test.js~describe12",
     "testDepth": 1,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe14",
+    "longname": "tests/pieces/piece.test.js~describe12.describe23",
     "access": null,
     "description": "testing for legal positions",
     "lineNumber": 99
   },
   {
-    "__docId__": 87,
+    "__docId__": 116,
     "kind": "test",
-    "name": "it15",
-    "testId": 15,
-    "memberof": "tests/helpers/pieces/piece.test.js~describe3.describe14",
+    "name": "it24",
+    "testId": 24,
+    "memberof": "tests/pieces/piece.test.js~describe12.describe23",
     "testDepth": 2,
     "static": true,
-    "longname": "tests/helpers/pieces/piece.test.js~describe3.describe14.it15",
+    "longname": "tests/pieces/piece.test.js~describe12.describe23.it24",
     "access": null,
     "lineNumber": 104,
     "testTargets": [
